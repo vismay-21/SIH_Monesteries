@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Monastery360 Design System - Clean Modern Colors */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    /* Deep Burgundy Primary */
+    --primary: 350 65% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Warm Gray Secondary */
+    --secondary: 210 10% 85%;
+    --secondary-foreground: 220 15% 20%;
+
+    /* Deep Teal Accent */
+    --accent: 180 45% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Bronze Accents */
+    --gold: 30 65% 45%;
+    --gold-foreground: 0 0% 98%;
+
+    /* Warm Muted Tones */
+    --muted: 30 20% 95%;
+    --muted-foreground: 30 10% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 15% 90%;
+    --input: 30 15% 92%;
+    --ring: 30 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(30 100% 50% / 0.1), hsl(0 100% 27% / 0.05));
+    --gradient-saffron: linear-gradient(135deg, hsl(30 100% 50%), hsl(35 90% 55%));
+    --gradient-monastery: linear-gradient(135deg, hsl(0 100% 27%), hsl(15 85% 35%));
+    --gradient-prayer: linear-gradient(135deg, hsl(225 73% 57%), hsl(240 65% 65%));
+    
+    /* Glass Morphism */
+    --glass-bg: hsl(0 0% 100% / 0.1);
+    --glass-border: hsl(0 0% 100% / 0.2);
+    --glass-shadow: 0 8px 32px hsl(30 100% 50% / 0.1);
+
+    /* Cultural Shadows */
+    --shadow-monastery: 0 20px 60px hsl(0 100% 27% / 0.2);
+    --shadow-prayer: 0 10px 40px hsl(225 73% 57% / 0.15);
+    --shadow-gold: 0 8px 25px hsl(51 100% 50% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with monastery night ambiance */
+    --background: 15 20% 8%;
+    --foreground: 30 15% 92%;
+
+    --card: 15 25% 12%;
+    --card-foreground: 30 15% 92%;
+
+    --popover: 15 25% 12%;
+    --popover-foreground: 30 15% 92%;
+
+    --primary: 30 100% 50%;
+    --primary-foreground: 15 20% 8%;
+
+    --secondary: 0 100% 35%;
+    --secondary-foreground: 30 15% 92%;
+
+    --accent: 225 73% 65%;
+    --accent-foreground: 15 20% 8%;
+
+    --gold: 51 100% 60%;
+    --gold-foreground: 15 20% 8%;
+
+    --muted: 15 20% 15%;
+    --muted-foreground: 30 10% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 30 15% 92%;
+
+    --border: 15 20% 20%;
+    --input: 15 20% 18%;
+    --ring: 30 100% 50%;
+
+    /* Dark gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(30 100% 50% / 0.15), hsl(0 100% 35% / 0.1));
+    --gradient-saffron: linear-gradient(135deg, hsl(30 100% 50%), hsl(35 90% 45%));
+    --gradient-monastery: linear-gradient(135deg, hsl(0 100% 35%), hsl(15 85% 25%));
+    --gradient-prayer: linear-gradient(135deg, hsl(225 73% 65%), hsl(240 65% 55%));
+    
+    --glass-bg: hsl(15 20% 12% / 0.8);
+    --glass-border: hsl(30 100% 50% / 0.1);
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Typography System */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Typography Classes */
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Crimson Text', serif;
+  }
+
+  /* Glass Morphism Components */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Cultural Animation */
+  .prayer-flag-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .monastery-glow {
+    box-shadow: var(--shadow-monastery);
+    transition: all 0.3s ease;
+  }
+
+  .monastery-glow:hover {
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+  }
+
+  /* Parallax Container */
+  .parallax-container {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+  }
+
+  .parallax-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .parallax-back {
+    transform: translateZ(-1px) scale(2);
+  }
+
+  .parallax-base {
+    transform: translateZ(0);
+  }
+}
+
+@layer components {
+  /* Custom Button Variants */
+  .btn-monastery {
+    background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary) / 0.9));
+    color: hsl(var(--secondary-foreground));
+    box-shadow: 0 4px 14px 0 hsl(var(--secondary) / 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-monastery:hover {
+    background: linear-gradient(135deg, hsl(var(--secondary) / 0.9), hsl(var(--secondary) / 0.8));
+    box-shadow: 0 6px 20px 0 hsl(var(--secondary) / 0.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-saffron {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.9));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 4px 14px 0 hsl(var(--primary) / 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-saffron:hover {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--primary) / 0.8));
+    box-shadow: 0 6px 20px 0 hsl(var(--primary) / 0.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-prayer {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent) / 0.9));
+    color: hsl(var(--accent-foreground));
+    box-shadow: 0 4px 14px 0 hsl(var(--accent) / 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-prayer:hover {
+    background: linear-gradient(135deg, hsl(var(--accent) / 0.9), hsl(var(--accent) / 0.8));
+    box-shadow: 0 6px 20px 0 hsl(var(--accent) / 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Navigation Cards */
+  .nav-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-monastery);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-card:hover {
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+  }
+
+  .nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-card:hover::before {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
