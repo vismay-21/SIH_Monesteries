@@ -30,9 +30,9 @@ export const HeroSection = () => {
         <img 
           src={heroImage} 
           alt="Rumtek Monastery at golden hour with prayer flags and Himalayan backdrop"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-100"
         />
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-background/1" />
       </div>
 
       {/* Solid Navigation Bar */}
