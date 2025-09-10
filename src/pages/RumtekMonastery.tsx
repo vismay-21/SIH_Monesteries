@@ -365,60 +365,78 @@ export default function RumtekMonastery() {
         </div>
 
         {/* Action Buttons Grid */}
-        <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="grid md:grid-cols-8 gap-4 mb-8">
           <Button 
-            className="btn-monastery h-20 flex-col"
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
             onClick={() => openPopup('history')}
           >
-            <div className="w-8 h-8 mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
               📖
             </div>
             History
           </Button>
           <Button 
-            className="btn-monastery h-20 flex-col"
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
             onClick={() => openPopup('travelRoutes')}
           >
-            <div className="w-8 h-8 mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
               🚌
             </div>
             Travel Routes
           </Button>
           <Button 
-            className="btn-monastery h-20 flex-col"
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
             onClick={() => openPopup('rituals')}
           >
-            <div className="w-8 h-8 mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
               🙏
             </div>
             Rituals
           </Button>
           <Button 
-            className="btn-monastery h-20 flex-col"
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
             onClick={() => openPopup('famousPlaces')}
           >
-            <div className="w-8 h-8 mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
               🏔️
             </div>
             Nearby Places
           </Button>
           <Button 
-            className="btn-monastery h-20 flex-col"
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
             onClick={() => openPopup('interactiveMap')}
           >
-            <div className="w-8 h-8 mb-2 bg-primary/20 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
               🗺️
             </div>
             Interactive Map
           </Button>
           <Button 
-            className="btn-saffron h-20 flex-col"
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
             onClick={() => openPopup('virtualTour')}
           >
-            <div className="w-8 h-8 mb-2 bg-saffron/20 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
               📹
             </div>
             360° Tour
+          </Button>
+          <Button 
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+            onClick={() => openPopup('video')}
+          >
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
+              🎥
+            </div>
+            Video
+          </Button>
+          <Button 
+            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+            onClick={() => openPopup('3dModel')}
+          >
+            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
+              🖼️
+            </div>
+            3D Model
           </Button>
         </div>
 
