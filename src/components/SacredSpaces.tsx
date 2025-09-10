@@ -34,7 +34,7 @@ const monasteries = [
     founded: '1641',
     description: 'Considered the holiest monastery in Sikkim, positioned at the confluence of two sacred rivers with stunning mountain views.',
     image: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=400&h=300&fit=crop',
-    hasVirtualTour: false,
+    hasVirtualTour: true,
     nextCeremony: 'Bumchu Festival - Feb 28'
   },
   {
@@ -54,7 +54,7 @@ const monasteries = [
     founded: '1701',
     description: 'The first monastery built in Sikkim, situated on a hilltop and known for its historical significance and peaceful atmosphere.',
     image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop',
-    hasVirtualTour: false,
+    hasVirtualTour: true,
     nextCeremony: 'Prayer Ceremony - Jan 20'
   },
   {
