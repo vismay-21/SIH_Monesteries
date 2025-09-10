@@ -260,6 +260,42 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   </Dialog>
 );
 
+const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
+  <Dialog open={isOpen} onOpenChange={onClose}>
+    <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
+      <DialogHeader>
+        <DialogTitle className="font-monastery text-2xl">Video Tour</DialogTitle>
+      </DialogHeader>
+      <div className="relative bg-muted rounded-lg overflow-hidden">
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="Rumtek Monastery Video Tour"
+          className="w-[95%] h-[95%] mx-auto rounded-lg"
+          style={{ aspectRatio: '16/9' }}
+          allow="fullscreen"
+        />
+      </div>
+    </DialogContent>
+  </Dialog>
+);
+const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
+  <Dialog open={isOpen} onOpenChange={onClose}>
+    <DialogContent className="max-w-4xl max-h-[95vh] overflow-hidden">
+      <DialogHeader>
+        <DialogTitle className="font-monastery text-2xl">3D Model</DialogTitle>
+      </DialogHeader>
+      <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
+        <iframe 
+          src="https://sketchfab.com/models/12345678/embed" 
+          title="Rumtek Monastery 3D Model"
+          className="w-full h-full"
+          allow="fullscreen"
+        />
+      </div>
+    </DialogContent>
+  </Dialog>
+);
+
 export default function RumtekMonastery() {
   const navigate = useNavigate();
   const [activePopup, setActivePopup] = useState<string | null>(null);
@@ -464,6 +500,8 @@ export default function RumtekMonastery() {
       <RitualsPopup isOpen={activePopup === 'rituals'} onClose={closePopup} />
       <FamousPlacesPopup isOpen={activePopup === 'famousPlaces'} onClose={closePopup} />
       <InteractiveMapPopup isOpen={activePopup === 'interactiveMap'} onClose={closePopup} />
+      <VideoPopup isOpen={activePopup === 'video'} onClose={closePopup} />
+      <ModelPopup isOpen={activePopup === '3dModel'} onClose={closePopup} />
     </div>
   );
 }
