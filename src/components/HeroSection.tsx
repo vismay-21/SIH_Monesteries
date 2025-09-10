@@ -95,10 +95,10 @@ export const HeroSection = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Button variant="outline" className="font-body">
-                <Users className="w-4 h-4 mr-2" />
-                Plan Visit
-              </Button>
+              <Button variant="ghost" className="font-body">
+                  <Users className="w-4 h-4 mr-2" />
+                          Plan Visit
+                        </Button>
             </div>
           </div>
         </div>
@@ -118,25 +118,42 @@ export const HeroSection = () => {
           </div>
           
           {/* Tagline */}
-          <p className="text-muted-foreground text-xl md:text-2xl font-body mb-12 max-w-2xl mx-auto">
+          <p className="text-foreground text-xl md:text-2xl font-body font-semibold mb-12 max-w-2xl mx-auto">
             Journey Through 200+ Sacred Sanctuaries
           </p>
 
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" onClick={handleScrollToContent} className="font-body">
-              Start Exploring
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => setExploreOpen(true)} className="font-body">
-              Browse Monasteries
-            </Button>
+            <Button
+    size="lg"
+    onClick={handleScrollToContent}
+    className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
+  >
+    Start Exploring
+  </Button>
+  <Button
+    size="lg"
+    variant="default"
+    onClick={() => setExploreOpen(true)}
+    className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
+  >
+    Browse Monasteries
+  </Button>
+  <Button
+    size="lg"
+    variant="default"
+    onClick={() => {/* Add your Highlights logic here */}}
+    className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
+  >
+    Highlights
+  </Button>
           </div>
 
           {/* Scroll Indicator */}
           <div className="flex flex-col items-center animate-bounce">
-            <p className="text-muted-foreground text-sm mb-2 font-body">
-              Discover Sacred Spaces Below
-            </p>
+            <p className="text-gray-200 text-sm font-bold mb-2 font-body">
+  Discover Sacred Spaces Below
+</p>
             <ArrowDown className="w-6 h-6 text-primary" />
           </div>
         </div>
