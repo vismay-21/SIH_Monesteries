@@ -152,8 +152,8 @@ export const HeroSection = () => {
           {/* Scroll Indicator */}
           <div className="flex flex-col items-center animate-bounce">
             <p className="text-gray-200 text-sm font-bold mb-2 font-body">
-  Discover Sacred Spaces Below
-</p>
+            Discover Sacred Spaces Below
+          </p>
             <ArrowDown className="w-6 h-6 text-primary" />
           </div>
         </div>
