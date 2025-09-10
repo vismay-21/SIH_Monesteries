@@ -84,10 +84,21 @@ export const SacredSpaces = () => {
   const handleMonasteryClick = (monasteryId: string) => {
     setSelectedMonastery(monasteryId);
     if (monasteryId === '1') { // Rumtek monastery
-      navigate('/monastery/rumtek');
-    } else {
-      console.log('Selected monastery:', monasteryId);
-    }
+    navigate('/monastery/rumtek');
+  } else if (monasteryId === '2') { // Pemayangtse monastery
+    navigate('/monastery/pemayangtse');
+  } else if (monasteryId == '3') {
+    navigate('/monastery/Tashiding');
+  } else if (monasteryId == '4'){
+    navigate('/monastery/Enchey');
+  } else if (monasteryId == '5'){
+    navigate('/monastery/Dubdi'); 
+  } else if (monasteryId == '6'){  
+    navigate('/monastery/Sangachoeling');
+  }
+  else {
+    console.log('Selected monastery:', monasteryId);
+  }
   };
 
   return (
