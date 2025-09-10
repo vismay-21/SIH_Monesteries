@@ -35,9 +35,9 @@ const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
         <div className="absolute bottom-4 left-4 right-4 flex justify-between">
           <Badge className="bg-saffron text-saffron-foreground">Main Hall</Badge>
           <div className="flex space-x-2">
-            <Button size="sm" variant="outline" className="text-white border-white hover:bg-white/20">Meditation Hall</Button>
-            <Button size="sm" variant="outline" className="text-white border-white hover:bg-white/20">Library</Button>
-            <Button size="sm" variant="outline" className="text-white border-white hover:bg-white/20">Courtyard</Button>
+            <Button size="sm" variant="outline" className="text-black border-white hover:bg-white/20">Meditation Hall</Button>
+            <Button size="sm" variant="outline" className="text-black border-white hover:bg-white/20">Library</Button>
+            <Button size="sm" variant="outline" className="text-black border-white hover:bg-white/20">Courtyard</Button>
           </div>
         </div>
       </div>
@@ -370,28 +370,29 @@ export default function RumtekMonastery() {
 
         {/* Quick Info Cards */}
         <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card className="text-center">
-            <CardContent className="pt-6">
-              <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">24 km from Gangtok</p>
-              <p className="text-sm text-muted-foreground">East Sikkim</p>
-            </CardContent>
+          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
+          <CardContent className="pt-6">
+          <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+          <p className="font-medium">24 km from Gangtok</p>
+         <p className="text-sm text-muted-foreground">East Sikkim</p>
+          </CardContent>
           </Card>
-          <Card className="text-center">
+
+          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
             <CardContent className="pt-6">
               <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-medium">Founded 1966</p>
               <p className="text-sm text-muted-foreground">16th Karmapa</p>
             </CardContent>
           </Card>
-          <Card className="text-center">
+          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
             <CardContent className="pt-6">
               <Users className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-medium">300+ Monks</p>
               <p className="text-sm text-muted-foreground">Karma Kagyu</p>
             </CardContent>
           </Card>
-          <Card className="text-center">
+          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
             <CardContent className="pt-6">
               <Star className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="font-medium">Most Important</p>
