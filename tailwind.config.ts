@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Space Grotesk', 'sans-serif'],
-        body: ['Source Sans Pro', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+        body: ['Inter', 'sans-serif'],
         serif: ['Crimson Text', 'serif'],
+        accent: ['Cinzel Decorative', 'serif'],
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',

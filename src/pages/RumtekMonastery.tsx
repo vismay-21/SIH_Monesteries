@@ -1,5 +1,8 @@
+import rumtekImage from '../assets/rumtek.jpg';
+import rumtekImage2 from '../assets/rumtek2.jpg';
+import rumtekImage3 from '../assets/rumtek3.jpg';
 import { useState } from 'react';
-import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Clock, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
+import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -50,37 +53,137 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">History & Heritage</DialogTitle>
+        <DialogTitle className="font-monastery text-2xl">The Story of Rumtek</DialogTitle>
       </DialogHeader>
-      <div className="space-y-6">
-        <div className="prose prose-slate max-w-none">
-          <p className="text-muted-foreground leading-relaxed">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, was built under the direction of the 16th Karmapa, 
-            Rangjung Rigpe Dorje, as his main seat in exile. The monastery serves as the headquarters of the Karma Kagyu lineage.
-          </p>
+      <div className="space-y-10">
+        {/* Timeline Graphic */}
+        <div className="relative px-2 py-6">
+          {/* rail: more vibrant and visible */}
+          <div className="absolute left-6 top-0 bottom-0 w-1.5 bg-gradient-to-b from-saffron to-amber-500 rounded-full shadow-[inset_0_0_4px_rgba(0,0,0,0.15)]" />
+          <div className="flex flex-col gap-10 ml-0 md:ml-12">
+            {/* 1734 */}
+            <div className="relative flex items-start gap-6">
+              {/* year badge: fits all labels */}
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1734
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Birth of Rumtek</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  With blessings from the 9th Karmapa, Wangchuk Dorje, and patronage from Sikkim’s King, the first Rumtek Monastery rises—a jewel of Kagyu Buddhism in the Eastern Himalayas.
+                </p>
+                <img src={rumtekImage} alt="Old Rumtek Monastery" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 18th–19th Century */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  18th–19th C
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">A Time of Change</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Rumtek thrives for generations, but political shifts and time leave it weakened; by the mid-20th century, its once-grand halls fall into disrepair.
+                </p>
+                <img src={rumtekImage2} alt="Rumtek in Disrepair" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1959 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1959
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Exile and Renewal</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  The 16th Karmapa, Rangjung Rigpe Dorje, escapes Tibet after the Chinese invasion, carrying relics, texts, and the spiritual legacy of the Karma Kagyu lineage.
+                </p>
+                <img src={rumtekImage3} alt="Karmapa's Arrival" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1960–1966 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1960–66
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Rebuilding Faith</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Invited by Sikkim’s Chogyal, the 16th Karmapa selects Rumtek’s auspicious site. With donations from devotees across India and abroad, a magnificent new monastery is constructed—faith and community chiseling stone into sanctuary.
+                </p>
+                {/* Replaced placeholder with actual Rumtek image */}
+                <img src={rumtekImage} alt="Construction of New Rumtek" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1966 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1966
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">A New Seat-in-Exile</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  The 16th Karmapa enthrones Rumtek as his seat-in-exile. Sacred treasures—silk thangkas, statues, the 108-volume Kangyur—are installed, transforming Rumtek into the heartbeat of Tibetan Buddhism outside Tibet.
+                </p>
+                {/* Replaced placeholder with actual Rumtek image */}
+                <img src={rumtekImage} alt="Installation of Sacred Treasures" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1981 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1981
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Legacy Sealed</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Upon the Karmapa’s passing, his relics are enshrined within a glittering Golden Stupa, sealing Rumtek’s role as both refuge and eternal symbol of resilience.
+                </p>
+                {/* Replaced placeholder with actual Rumtek image */}
+                <img src={rumtekImage} alt="Golden Stupa & Relics" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Foundation</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Established in 1966, Rumtek is a replica of the original Tsurphu Monastery in Tibet.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Architecture</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Traditional Tibetan architecture with intricate woodwork and vibrant Buddhist art.</p>
-            </CardContent>
-          </Card>
+        {/* End Timeline */}
+
+        {/* Additional Details Section */}
+        <div className="mt-12">
+          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Rumtek Today</h3>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Rumtek Monastery stands as a living testament to the resilience of Tibetan Buddhism. Its halls echo with the chants of monks, the debates of scholars, and the footsteps of pilgrims from around the world.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            The monastery is not only a spiritual center but also a hub for cultural preservation, hosting vibrant festivals, sacred rituals, and teachings that keep centuries-old traditions alive.
+          </p>
+          <img src={rumtekImage} alt="Rumtek Today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
+          <p className="text-muted-foreground leading-relaxed">
+            Visitors can explore its ornate architecture, meditate in tranquil courtyards, and witness the living heritage of the Karma Kagyu lineage—where every stone, thangka, and prayer wheel tells a story of faith and survival.
+          </p>
         </div>
       </div>
     </DialogContent>
   </Dialog>
 );
+
+
 
 const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -188,53 +291,96 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   </Dialog>
 );
 
-const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
-  <Dialog open={isOpen} onOpenChange={onClose}>
-    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-      <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">Famous Places Nearby</DialogTitle>
-      </DialogHeader>
-      <div className="grid md:grid-cols-2 gap-4">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Institute of Tibetology</CardTitle>
-            <CardDescription>2 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Research center for Tibetan studies with rare manuscripts and artifacts.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Flower Exhibition Centre</CardTitle>
-            <CardDescription>3 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Beautiful botanical garden showcasing Sikkim's diverse flora.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Ganesh Tok</CardTitle>
-            <CardDescription>8 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Scenic viewpoint offering panoramic views of Gangtok and surrounding mountains.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Hanuman Tok</CardTitle>
-            <CardDescription>11 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Temple dedicated to Lord Hanuman with stunning mountain vistas.</p>
-          </CardContent>
-        </Card>
-      </div>
-    </DialogContent>
-  </Dialog>
-);
+const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  const nearbyPlaces = [
+    {
+      title: "Tashi View Point",
+      distanceText: "≈ 1 hr 30 min drive (35–40 km) from Rumtek",
+      blurb: "Sunrise hotspot with sweeping views of Kangchenjunga and the Eastern Himalayas.",
+      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/tashi-view-point.html"
+    },
+    {
+      title: "Do Drul Chorten",
+      distanceText: "≈ 45–50 min drive (22–25 km) from Rumtek",
+      blurb: "A striking white stupa encircled by 108 prayer wheels, radiating peace and devotion.",
+      link: "http://sikkimstdc.com/GeneralPages/Details/Do-Drul-Chorten/"
+    },
+    {
+      title: "Enchey Monastery",
+      distanceText: "≈ 1 hr 10 min drive (32–35 km) from Rumtek",
+      blurb: "200-year-old monastery famed for its Cham mask dances and ornate Sikkimese murals.",
+      link: "https://gangtokdistrict.nic.in/tourist-place/enchey-monastery/"
+    },
+    {
+      title: "Banjhakri Falls & Energy Park",
+      distanceText: "≈ 45 min drive (20 km) from Rumtek",
+      blurb: "Lush green park with a roaring waterfall, bridges, and shamanic folklore sculptures.",
+      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/banjhakri-falls-and-energy-park.html"
+    },
+    {
+      title: "Namgyal Institute of Tibetology",
+      distanceText: "≈ 50 min drive (23 km) from Rumtek",
+      blurb: "Premier research hub showcasing rare Tibetan manuscripts, thangkas, and relics.",
+      link: "https://www.tibetology.sikkim.gov.in/"
+    },
+    {
+      title: "Hanuman Tok",
+      distanceText: "≈ 1 hr 15 min drive (30 km) from Rumtek",
+      blurb: "Hilltop Hanuman temple maintained by the Indian Army, offering pristine mountain vistas.",
+      link: "https://gangtokdistrict.nic.in/tourist-place/hanuman-tok/"
+    }
+  ];
+
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="font-monastery text-2xl">Famous Places Nearby</DialogTitle>
+        </DialogHeader>
+
+        <div className="flex flex-col gap-6">
+          {nearbyPlaces.map((place) => (
+            <Card
+              key={place.title}
+              className="rounded-xl border bg-white shadow-sm hover:shadow-md transition-shadow"
+            >
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg">{place.title}</CardTitle>
+                <CardDescription>{place.distanceText}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col md:flex-row gap-4 md:items-start">
+                  {/* Text */}
+                  <div className="flex-1">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{place.blurb}</p>
+                  </div>
+                  {/* Image / Link */}
+                  <div className="md:w-48">
+                    <a
+                      href={place.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open more about ${place.title}`}
+                      className="group block"
+                    >
+                      <img
+                        src={rumtekImage}
+                        alt={place.title}
+                        className="aspect-[4/3] w-full rounded-lg object-cover shadow transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+
 
 const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -269,8 +415,7 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative bg-muted rounded-lg overflow-hidden">
         <iframe 
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-          title="Rumtek Monastery Video Tour"
+          src="https://www.youtube.com/embed/LL48yM1nFp8?si=6LlgacCDMllELS5Z" 
           className="w-[95%] h-[95%] mx-auto rounded-lg"
           style={{ aspectRatio: '16/9' }}
           allow="fullscreen"
@@ -317,9 +462,7 @@ export default function RumtekMonastery() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1628624747186-a88c31695b88?w=800&h=600&fit=crop'
+    rumtekImage, rumtekImage2, rumtekImage3
   ];
 
   const openPopup = (popupName: string) => setActivePopup(popupName);
@@ -383,38 +526,51 @@ export default function RumtekMonastery() {
           </div>
         </div>
 
-        {/* Quick Info Cards */}
-        <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-          <CardContent className="pt-6">
-          <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-          <p className="font-medium">24 km from Gangtok</p>
-         <p className="text-sm text-muted-foreground">East Sikkim</p>
-          </CardContent>
-          </Card>
 
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-            <CardContent className="pt-6">
-              <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">Founded 1966</p>
-              <p className="text-sm text-muted-foreground">16th Karmapa</p>
-            </CardContent>
-          </Card>
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-            <CardContent className="pt-6">
-              <Users className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">300+ Monks</p>
-              <p className="text-sm text-muted-foreground">Karma Kagyu</p>
-            </CardContent>
-          </Card>
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-            <CardContent className="pt-6">
-              <Star className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">Most Important</p>
-              <p className="text-sm text-muted-foreground">Monastery in Sikkim</p>
-            </CardContent>
-          </Card>
-        </div>
+ {/* Quick Info Cards – beautified */}
+<div className="grid md:grid-cols-4 gap-6 mb-12">
+  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+    <CardContent className="py-8">
+      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
+        <MapPin className="w-6 h-6" />
+      </div>
+      <p className="text-base font-bold tracking-tight text-stone-800">24 km from Gangtok</p>
+      <p className="text-sm text-stone-600 mt-1">East Sikkim</p>
+    </CardContent>
+  </Card>
+
+  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-red-50 to-pink-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+    <CardContent className="py-8">
+      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
+        <Calendar className="w-6 h-6" />
+      </div>
+      <p className="text-base font-bold tracking-tight text-stone-800">Founded 1966</p>
+      <p className="text-sm text-stone-600 mt-1">16th Karmapa</p>
+    </CardContent>
+  </Card>
+
+  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-emerald-50 to-teal-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+    <CardContent className="py-8">
+      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
+        <Users className="w-6 h-6" />
+      </div>
+      <p className="text-base font-bold tracking-tight text-stone-800">300+ Monks</p>
+      <p className="text-sm text-stone-600 mt-1">Karma Kagyu</p>
+    </CardContent>
+  </Card>
+
+  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-indigo-50 to-violet-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+    <CardContent className="py-8">
+      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
+        <Star className="w-6 h-6" />
+      </div>
+      <p className="text-base font-bold tracking-tight text-stone-800">Sikkim’s Most Important</p>
+      <p className="text-sm text-stone-600 mt-1">Monastery</p>
+    </CardContent>
+  </Card>
+</div>
+
+
 
         {/* Action Buttons Grid */}
         <div className="grid md:grid-cols-8 gap-4 mb-8">
@@ -507,6 +663,83 @@ export default function RumtekMonastery() {
             along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
           </p>
         </div>
+
+        {/* --- BEGIN: Extended Story Section --- */}
+        <div className="flex flex-col gap-12 mt-16">
+          {/* Section 1 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rumtek Monastery: The Living Heart of Tibet in Sikkim</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                For the traveler who seeks more than landscapes—for the one who listens for stories in stones and silence—Rumtek Monastery is not just a stop on the map. It is a journey into Tibet’s living heartbeat, carried across borders, revived in exile, and still breathing in the emerald folds of Sikkim’s hills.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Founded in the 16th century and rebuilt by the 16th Karmapa after his flight from Tibet, Rumtek is less a monument than a vessel of resilience. Every carved beam and prayer wheel tells a tale of survival, faith, and the timeless rhythm of devotion.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Rumtek Monastery - Living Heart" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+
+          {/* Section 2 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">An Architectural Mandala</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Approaching Rumtek feels like stepping into a sacred universe painted in wood and stone. Modeled after the legendary Tsurphu Monastery of Tibet, its three-story structure fuses fortress strength with mandala symmetry.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Vibrant murals splash across walls with scenes of Buddhas, Bodhisattvas, and guardian deities. Carved dragons curl around golden pillars. Sunlight falls across silk thangkas and hand-woven carpets, setting them aglow. In the main hall, a ten-foot Sakyamuni Buddha watches with a serene gravity that seems to slow time.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                As visitors walk a kora—the circular path around the monastery—every spin of the prayer wheel, etched with ancient mantras, whispers blessings into the mountain wind.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Rumtek Monastery - Architecture" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+
+          {/* Section 3 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Golden Heart</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                At the center of Rumtek lies its spiritual treasure: the Golden Stupa. Inlaid with jewels and precious metals, it houses the relics of the 16th Karmapa. Surrounding murals depict cosmic landscapes where myth and mountain merge.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Across the courtyard stands the Karma Shri Nalanda Institute for Higher Buddhist Studies—an academic sanctum where monks debate, learn, and keep alive centuries of Buddhist philosophy. To witness them in debate, voices rising and hands clapping in ritual rhythm, is to glimpse an education system older than most nations.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                And then come the festivals. During Vajrakilaya Drupchen or Losar, the courtyard bursts with color and sound—masked dancers whirl, cymbals clash, and chants rise into the sky, drawing pilgrims, photographers, and seekers alike into an unforgettable celebration.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Rumtek Monastery - Golden Heart" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+
+          {/* Section 4 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary for Seekers</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Rumtek is not designed for casual glances—it rewards those who linger. For the historian, it offers archives of rare Buddhist texts. For the spiritual traveler, it provides spaces scented with incense and draped with prayer flags that frame sweeping Himalayan vistas. For the storyteller, it is a canvas where devotion, art, and survival paint their intertwined tale.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Sit quietly on the stone steps, and you may hear the steady drone of monks chanting at dawn. Watch prayer flags flutter against snow peaks, and you may feel something shift within—something that belongs not just to the monastery, but to you.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Rumtek is less about visiting and more about returning—with more questions, more stillness, and a deeper reverence for a culture that endures in every stone, song, and shadow.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Rumtek Monastery - Sanctuary for Seekers" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+        </div>
+        {/* --- END: Extended Story Section --- */}
       </div>
 
       {/* Popups */}

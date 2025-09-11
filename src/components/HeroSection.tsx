@@ -10,11 +10,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection = () => {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleScrollToContent = () => {
     const element = document.getElementById('main-content');
@@ -142,7 +143,7 @@ export const HeroSection = () => {
   <Button
     size="lg"
     variant="default"
-    onClick={() => {/* Add your Highlights logic here */}}
+    onClick={() => navigate("/highlights")}
     className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
   >
     Highlights
