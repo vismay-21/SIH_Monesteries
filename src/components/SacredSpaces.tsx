@@ -43,7 +43,7 @@ const monasteries = [
     location: 'Gangtok, East Sikkim',
     founded: '1909', 
     description: 'A significant Nyingma monastery known for its annual Cham dance and beautiful location overlooking Gangtok.',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Enchey_Monastery_in_Gangtok_district%2C_East_Sikkim.jpg',
+    image: 'https://live.staticflickr.com/389/19359749150_3d4facbc6d_b.jpg',
     hasVirtualTour: true,
     nextCeremony: 'Cham Dance - Dec 18'
   },
