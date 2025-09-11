@@ -12,22 +12,39 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useNavigate } from "react-router-dom";
 
+type ChatMessage = { role: 'system' | 'user' | 'assistant'; content: string };
+
 export const HeroSection = () => {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
-  const [messages, setMessages] = useState<{role: string, content: string}[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  const API_URL = "https://api.openai.com/v1/chat/completions";
+  // ✅ Use Groq's OpenAI-compatible endpoint + a Groq model
+  const API_URL = "https://api.groq.com/openai/v1/chat/completions";
+  const MODEL = "llama-3.1-8b-instant"; // or "llama3-8b-8192"
   const API_KEY = "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";
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
-    const userMsg = { role: "user", content: input };
+    if (!input.trim() || loading) return;
+
+    const userMsg: ChatMessage = { role: "user", content: input.trim() };
+
+    // Build the final payload messages explicitly to avoid setState race conditions
+    const systemMsg: ChatMessage = {
+      role: "system",
+      content:
+        "You are Heritage Sikkim AI, a friendly local guide for Sikkim. Be concise, accurate, and helpful. " +
+        "If asked 'where is Rumtek', note it's near Gangtok in East Sikkim, India; roughly 24 km by road. " +
+        "Prefer factual, visitor-friendly answers."
+    };
+    const messagesToSend: ChatMessage[] = [systemMsg, ...messages, userMsg];
+
+    // Optimistic UI
     setMessages(prev => [...prev, userMsg]);
     setInput('');
     setLoading(true);
@@ -40,18 +57,37 @@ export const HeroSection = () => {
           "Authorization": `Bearer ${API_KEY}`,
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo",
-          messages: [...messages, userMsg],
+          model: MODEL,
+          messages: messagesToSend,
+          temperature: 0.3,
+          top_p: 0.9,
         }),
       });
+
       const data = await response.json();
-      const aiMsg = data.choices?.[0]?.message?.content || "Sorry, I couldn't respond.";
-      setMessages(prev => [...prev, { role: "assistant", content: aiMsg }]);
-    } catch (err) {
-      setMessages(prev => [...prev, { role: "assistant", content: "Error connecting to AI." }]);
+
+      if (!response.ok) {
+        const errText = data?.error?.message || `${response.status} ${response.statusText}`;
+        setMessages(prev => [
+          ...prev,
+          { role: "assistant", content: `Hmm, I ran into a problem: ${errText}` }
+        ]);
+      } else {
+        // Groq uses the OpenAI-compatible schema
+        const aiText: string =
+          data?.choices?.[0]?.message?.content ??
+          "Sorry, I couldn't respond.";
+        setMessages(prev => [...prev, { role: "assistant", content: aiText }]);
+      }
+    } catch (err: any) {
+      setMessages(prev => [
+        ...prev,
+        { role: "assistant", content: `Network error: ${String(err?.message || err)}` }
+      ]);
+    } finally {
+      setLoading(false);
+      inputRef.current?.focus();
     }
-    setLoading(false);
-    inputRef.current?.focus();
   };
 
   const handleScrollToContent = () => {
@@ -135,8 +171,8 @@ export const HeroSection = () => {
 
               <Button variant="ghost" className="font-body">
                   <Users className="w-4 h-4 mr-2" />
-                          Plan Visit
-                        </Button>
+                  Plan Visit
+              </Button>
             </div>
           </div>
         </div>
