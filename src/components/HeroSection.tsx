@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ArrowDown, MapPin, Calendar, BookOpen, Camera, Compass, Users, Menu } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { ArrowDown, MapPin, Calendar, BookOpen, Camera, Compass, Users, Menu, X, Send, MessageCircle } from 'lucide-react';
 import heroImage from '@/assets/hero-monastery.jpg';
 import { RitualCalendarPopup } from './RitualCalendarPopup';
 import { ExplorePopup } from './ExplorePopup';
@@ -15,7 +15,44 @@ import { useNavigate } from "react-router-dom";
 export const HeroSection = () => {
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [messages, setMessages] = useState<{role: string, content: string}[]>([]);
+  const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+
+  const API_URL = "https://api.openai.com/v1/chat/completions";
+  const API_KEY = "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";
+
+  const sendMessage = async () => {
+    if (!input.trim()) return;
+    const userMsg = { role: "user", content: input };
+    setMessages(prev => [...prev, userMsg]);
+    setInput('');
+    setLoading(true);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: [...messages, userMsg],
+        }),
+      });
+      const data = await response.json();
+      const aiMsg = data.choices?.[0]?.message?.content || "Sorry, I couldn't respond.";
+      setMessages(prev => [...prev, { role: "assistant", content: aiMsg }]);
+    } catch (err) {
+      setMessages(prev => [...prev, { role: "assistant", content: "Error connecting to AI." }]);
+    }
+    setLoading(false);
+    inputRef.current?.focus();
+  };
 
   const handleScrollToContent = () => {
     const element = document.getElementById('main-content');
@@ -126,39 +163,104 @@ export const HeroSection = () => {
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
-    size="lg"
-    onClick={handleScrollToContent}
-    className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
-  >
-    Start Exploring
-  </Button>
-  <Button
-    size="lg"
-    variant="default"
-    onClick={() => setExploreOpen(true)}
-    className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
-  >
-    Browse Monasteries
-  </Button>
-  <Button
-    size="lg"
-    variant="default"
-    onClick={() => navigate("/highlights")}
-    className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
-  >
-    Highlights
-  </Button>
+              size="lg"
+              onClick={handleScrollToContent}
+              className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
+            >
+              Start Exploring
+            </Button>
+            <Button
+              size="lg"
+              variant="default"
+              onClick={() => setExploreOpen(true)}
+              className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
+            >
+              Browse Monasteries
+            </Button>
+            <Button
+              size="lg"
+              variant="default"
+              onClick={() => navigate("/highlights")}
+              className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
+            >
+              Highlights
+            </Button>
           </div>
 
           {/* Scroll Indicator */}
           <div className="flex flex-col items-center animate-bounce">
             <p className="text-gray-200 text-sm font-bold mb-2 font-body">
-            Discover Sacred Spaces Below
-          </p>
+              Discover Sacred Spaces Below
+            </p>
             <ArrowDown className="w-6 h-6 text-primary" />
           </div>
         </div>
       </div>
+
+      {/* Chatbot Floating Button */}
+      <button
+        className="fixed bottom-6 right-6 z-50 bg-primary rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:scale-110 transition"
+        onClick={() => setChatOpen(true)}
+        aria-label="Open Heritage Sikkim AI Chatbot"
+      >
+        <MessageCircle className="w-7 h-7 text-white" />
+      </button>
+
+      {/* Chatbot Popup */}
+      {chatOpen && (
+        <div className="fixed bottom-24 right-8 z-50 bg-card border border-border rounded-xl shadow-2xl w-80 flex flex-col">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-primary rounded-t-xl">
+            <span className="font-bold text-lg text-white">Heritage Sikkim AI</span>
+            <button onClick={() => setChatOpen(false)} aria-label="Close Chatbot">
+              <X className="w-5 h-5 text-white" />
+            </button>
+          </div>
+          <div className="flex-1 px-4 py-2 overflow-y-auto max-h-72 space-y-2">
+            {messages.length === 0 && (
+              <div className="text-muted-foreground text-sm mt-4 text-center">
+                Ask me anything about Sikkim's monasteries, rituals, or history!
+              </div>
+            )}
+            {messages.map((msg, idx) => (
+              <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+                <div className={`rounded-lg px-3 py-2 text-sm max-w-[80%] ${msg.role === "user" ? "bg-primary text-white" : "bg-muted text-foreground"}`}>
+                  {msg.content}
+                </div>
+              </div>
+            ))}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="rounded-lg px-3 py-2 text-sm bg-muted text-foreground animate-pulse">
+                  Typing...
+                </div>
+              </div>
+            )}
+          </div>
+          <form
+            className="flex items-center px-4 py-3 border-t border-border bg-background rounded-b-xl"
+            onSubmit={e => { e.preventDefault(); sendMessage(); }}
+          >
+            <input
+              ref={inputRef}
+              type="text"
+              className="flex-1 px-2 py-1 rounded bg-card border border-border focus:outline-none"
+              placeholder="Type your question..."
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              disabled={loading}
+              autoFocus
+            />
+            <button
+              type="submit"
+              className="ml-2 bg-primary rounded-full p-2 hover:bg-primary/80 transition"
+              disabled={loading || !input.trim()}
+              aria-label="Send"
+            >
+              <Send className="w-5 h-5 text-white" />
+            </button>
+          </form>
+        </div>
+      )}
 
       {/* Popups */}
       <RitualCalendarPopup isOpen={calendarOpen} onClose={() => setCalendarOpen(false)} />
