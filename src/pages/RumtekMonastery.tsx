@@ -380,8 +380,7 @@ const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   );
 };
 
-
-
+import rumtekMapImage from 'D:\\GitHub Repositories\\SIH_Monesteries\\src\\assets\\rumtekMapScreenshot.jpg'; // adjust path as needed
 const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden">
@@ -390,15 +389,15 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       </DialogHeader>
       <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop" 
-          alt="Interactive map showing Rumtek monastery location"
+          src={rumtekMapImage}
+          alt="Rumtek Monastery Map Screenshot"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
             📍 Rumtek Monastery
           </div>
-        </div>
+        </div> */}
         <div className="absolute bottom-4 right-4">
           <Button size="sm" className="btn-saffron">Get Directions</Button>
         </div>
@@ -406,6 +405,31 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     </DialogContent>
   </Dialog>
 );
+// This was before static map:
+// const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
+//   <Dialog open={isOpen} onOpenChange={onClose}>
+//     <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden">
+//       <DialogHeader>
+//         <DialogTitle className="font-monastery text-2xl">Interactive Location Map</DialogTitle>
+//       </DialogHeader>
+//       <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
+//         <img 
+//           src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop" 
+//           alt="Interactive map showing Rumtek monastery location"
+//           className="w-full h-full object-cover"
+//         />
+//         <div className="absolute inset-0 flex items-center justify-center">
+//           <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
+//             📍 Rumtek Monastery
+//           </div>
+//         </div>
+//         <div className="absolute bottom-4 right-4">
+//           <Button size="sm" className="btn-saffron">Get Directions</Button>
+//         </div>
+//       </div>
+//     </DialogContent>
+//   </Dialog>
+// );
 
 const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -456,13 +480,14 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   </Dialog>
 );
 
+import newGalleryImage from 'D:\\GitHub Repositories\\SIH_Monesteries\\src\\assets\\RumtekMainpage.jpg'; // <-- use your actual image path
 export default function RumtekMonastery() {
   const navigate = useNavigate();
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    rumtekImage, rumtekImage2, rumtekImage3
+    newGalleryImage, rumtekImage2, rumtekImage3
   ];
 
   const openPopup = (popupName: string) => setActivePopup(popupName);
