@@ -14,6 +14,7 @@ import SangachoelingMonastery from "./pages/SangachoelingMonastery.tsx";
 import Highlights from "./pages/Highlights";
 import JourneyPlanner from "./pages/JourneyPlanner";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (
