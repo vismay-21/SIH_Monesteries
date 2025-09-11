@@ -13,7 +13,7 @@ const monasteries = [
     location: 'Gangtok, East Sikkim',
     founded: '1966',
     description: 'The largest monastery in Sikkim, Rumtek serves as the seat-in-exile of the Karmapa Lama and houses precious Buddhist artifacts.',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=300&fit=crop',
+    image: 'https://dwq3yv87q1b43.cloudfront.net/public/blogs/fit-in/1200x675/Blog_20241231-1706054417-1735621009.jpeg',
     hasVirtualTour: true,
     nextCeremony: 'Losar Festival - Feb 15'
   },
@@ -23,7 +23,7 @@ const monasteries = [
     location: 'Pelling, West Sikkim',
     founded: '1705',
     description: 'One of the oldest and most important monasteries in Sikkim, known for its ancient architecture and spiritual significance.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+    image: 'https://www.exoticmiles.com/pelling/pemayangtse-monastery/',
     hasVirtualTour: true,
     nextCeremony: 'Cham Dance - Mar 2'
   },
@@ -33,7 +33,7 @@ const monasteries = [
     location: 'Yuksom, West Sikkim', 
     founded: '1641',
     description: 'Considered the holiest monastery in Sikkim, positioned at the confluence of two sacred rivers with stunning mountain views.',
-    image: 'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=400&h=300&fit=crop',
+    image: 'https://1001things.org/wp-content/uploads/2019/08/Tashi-Ding-Monastery12.jpg',
     hasVirtualTour: true,
     nextCeremony: 'Bumchu Festival - Feb 28'
   },
