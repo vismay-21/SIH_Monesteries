@@ -11,6 +11,7 @@ import TashidingMonastery from "./pages/TashidingMonastery.tsx";
 import EncheyMonastery from "./pages/EncheyMonastery.tsx";
 import DubdiMonastery from "./pages/DubdiMonastery.tsx";
 import SangachoelingMonastery from "./pages/SangachoelingMonastery.tsx";
+import Highlights from "./pages/Highlights";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/monastery/Enchey" element={<EncheyMonastery/>} />
           <Route path="/monastery/Dubdi" element={<DubdiMonastery/>} />
           <Route path="/monastery/Sangachoeling" element={<SangachoelingMonastery/>} />
+          <Route path="/highlights" element={<Highlights />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
