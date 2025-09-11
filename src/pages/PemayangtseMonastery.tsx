@@ -1,10 +1,15 @@
+import rumtekImage from '../assets/rumtek.jpg';
+import rumtekImage2 from '../assets/rumtek2.jpg';
+import rumtekImage3 from '../assets/rumtek3.jpg';
 import { useState } from 'react';
-import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Clock, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
+import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
+import '@google/model-viewer';
+import { LeafletMapComponent } from '@/components/LeafletMapComponent';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -19,7 +24,7 @@ const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=400&fit=crop" 
-          alt="360° view of Rumtek monastery interior"
+          alt="360° view of Pemayangtse monastery interior"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -49,37 +54,117 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">History & Heritage</DialogTitle>
+        <DialogTitle className="font-monastery text-2xl">The Story of Pemayangtse</DialogTitle>
       </DialogHeader>
-      <div className="space-y-6">
-        <div className="prose prose-slate max-w-none">
-          <p className="text-muted-foreground leading-relaxed">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, was built under the direction of the 16th Karmapa, 
-            Rangjung Rigpe Dorje, as his main seat in exile. The monastery serves as the headquarters of the Karma Kagyu lineage.
-          </p>
+      <div className="space-y-10">
+        {/* Timeline Graphic */}
+        <div className="relative px-2 py-6">
+          {/* rail */}
+          <div className="absolute left-6 top-0 bottom-0 w-1.5 bg-gradient-to-b from-saffron to-amber-500 rounded-full shadow-[inset_0_0_4px_rgba(0,0,0,0.15)]" />
+          <div className="flex flex-col gap-10 ml-0 md:ml-12">
+            {/* ~1650–51 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  c.1650–51
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Seeds of Devotion</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Lama Lhatsun Chempo establishes a small Lhakhang called Tsangkhang on this ridge—planting the first seeds of Pemayangtse’s destiny.
+                </p>
+                <img src={rumtekImage} alt="Early shrine at Pemayangtse" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1705 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1705
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Becoming a Monastery</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Under Chogyal Chakdor Namgyal, the shrine is enlarged into a full monastery—its role in Sikkim’s sacred geography secured.
+                </p>
+                <img src={rumtekImage2} alt="Pemayangtse growth period" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1710 */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1710
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Consecration</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Consecrated by the third Lhatsun Chempo (Dzogchen Jigme Pawo), the monastery is affirmed as a principal seat of the Nyingma order.
+                </p>
+                <img src={rumtekImage3} alt="Consecration of Pemayangtse" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1700s onward */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1700s →
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Parent Monastery</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Pemayangtse becomes the parent monastery for Nyingma in Sikkim. Ta-tshang monks are chosen from Bhutia families—celibate, of pure lineage, and without physical deformity—preserving strict tradition.
+                </p>
+                <img src={rumtekImage} alt="Monastic traditions" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 20th century */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  20th C
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Quakes & Restoration</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Major earthquakes (1913, 1960) damage structures, but careful restoration preserves sacred art, sculptures, murals, and the monastery’s integrity.
+                </p>
+                <img src={rumtekImage} alt="Restoration efforts" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Foundation</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Established in 1966, Rumtek is a replica of the original Tsurphu Monastery in Tibet.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Architecture</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Traditional Tibetan architecture with intricate woodwork and vibrant Buddhist art.</p>
-            </CardContent>
-          </Card>
+        {/* End Timeline */}
+
+        {/* Additional Details Section */}
+        <div className="mt-12">
+          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Pemayangtse Today</h3>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            Overlooking Yuksom—the cradle of Sikkim’s monarchy—Pemayangtse remains a living sanctuary of the Nyingma tradition, where ritual, scholarship, and community are braided into daily life.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            From carved wooden deities to ancient thangkas, every corner holds memory. Festivals and daily chants keep a centuries-old cadence alive for monks, locals, and travelers alike.
+          </p>
+          <img src={rumtekImage} alt="Pemayangtse Today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
+          <p className="text-muted-foreground leading-relaxed">
+            To visit is to step into a continuity—where the mountain wind carries mantras, and time feels lovingly unhurried.
+          </p>
         </div>
       </div>
     </DialogContent>
   </Dialog>
 );
+
+
 
 const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -97,8 +182,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">From Gangtok: 24 km (45 minutes)</p>
-              <p className="text-xs text-muted-foreground">Shared taxis and buses available every 30 minutes</p>
+              <p className="text-sm text-muted-foreground mb-2">From Pelling: ~2 km (10 min)</p>
+              <p className="text-xs text-muted-foreground">From Gangtok: ~115 km (4–5 hrs), shared taxis & buses available</p>
             </CardContent>
           </Card>
           <Card>
@@ -109,8 +194,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Private taxi: ₹800-1200</p>
-              <p className="text-xs text-muted-foreground">Well-maintained mountain roads</p>
+              <p className="text-sm text-muted-foreground mb-2">Local taxi from Pelling town</p>
+              <p className="text-xs text-muted-foreground">Well-maintained mountain roads; check weather in monsoon</p>
             </CardContent>
           </Card>
           <Card>
@@ -121,8 +206,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Bagdogra: 125 km (4 hours)</p>
-              <p className="text-xs text-muted-foreground">Helicopter service available</p>
+              <p className="text-sm text-muted-foreground mb-2">Bagdogra: ~140 km (5–6 hrs)</p>
+              <p className="text-xs text-muted-foreground">Helicopter service to Gangtok (seasonal), then by road</p>
             </CardContent>
           </Card>
         </div>
@@ -163,22 +248,22 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span>Losar Festival</span>
-                <Badge className="bg-primary text-primary-foreground">February 15</Badge>
+                <Badge className="bg-primary text-primary-foreground">February (Tibetan New Year)</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Tibetan New Year celebration with traditional mask dances and festivities.</p>
+              <p className="text-sm text-muted-foreground">Traditional festivities, prayers, and community gatherings.</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span>Cham Dance</span>
-                <Badge className="bg-secondary text-secondary-foreground">Monthly</Badge>
+                <Badge className="bg-secondary text-secondary-foreground">Annual/Seasonal</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Sacred masked dance performed by monks on the 10th day of every Tibetan month.</p>
+              <p className="text-sm text-muted-foreground">Masked ritual dances believed to cleanse obstacles and protect the land.</p>
             </CardContent>
           </Card>
         </div>
@@ -187,78 +272,124 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   </Dialog>
 );
 
-const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
-  <Dialog open={isOpen} onOpenChange={onClose}>
-    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-      <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">Famous Places Nearby</DialogTitle>
-      </DialogHeader>
-      <div className="grid md:grid-cols-2 gap-4">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Institute of Tibetology</CardTitle>
-            <CardDescription>2 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Research center for Tibetan studies with rare manuscripts and artifacts.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Flower Exhibition Centre</CardTitle>
-            <CardDescription>3 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Beautiful botanical garden showcasing Sikkim's diverse flora.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Ganesh Tok</CardTitle>
-            <CardDescription>8 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Scenic viewpoint offering panoramic views of Gangtok and surrounding mountains.</p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-lg">Hanuman Tok</CardTitle>
-            <CardDescription>11 km away</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">Temple dedicated to Lord Hanuman with stunning mountain vistas.</p>
-          </CardContent>
-        </Card>
-      </div>
-    </DialogContent>
-  </Dialog>
-);
+const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  const nearbyPlaces = [
+    {
+      title: "Sanga Choeling Monastery",
+      distanceText: "≈ Short trek from Pelling ridge",
+      blurb: "One of the oldest monasteries in Sikkim, perched on a ridge above Pelling.",
+      link: "https://www.oyorooms.com/travel-guide/travel-guide/pelling-sikkim-travel-guide/"
+    },
+    {
+      title: "Rabdentse Ruins",
+      distanceText: "≈ Short forest walk from Pemayangtse",
+      blurb: "The moss-covered remains of Sikkim’s old royal capital, a short trek from Pemayangtse.",
+      link: "https://traveltriangle.com/blog/pemayangtse-monastery/"
+    },
+    {
+      title: "Khecheopalri Lake",
+      distanceText: "≈ 35–45 min drive",
+      blurb: "A sacred “wish-fulfilling” lake surrounded by forests and legends.",
+      link: "https://www.naturediary.in/pelling-travel-guide/"
+    },
+    {
+      title: "Singshore Bridge",
+      distanceText: "≈ 1 hr drive",
+      blurb: "One of India’s highest suspension bridges, offering sweeping mountain views.",
+      link: "https://sikkimtourism.org/10-best-things-to-do-in-pelling/"
+    },
+    {
+      title: "Pelling Skywalk & Chenrezig Statue",
+      distanceText: "≈ 15–25 min drive",
+      blurb: "Glass skywalk with Himalayan views, leading up to a massive statue of Chenrezig.",
+      link: "https://www.naturediary.in/pelling-travel-guide/"
+    },
+    {
+      title: "Darap Village",
+      distanceText: "≈ 20–30 min drive",
+      blurb: "A traditional Limboo village with homestays, farms, and forest trails.",
+      link: "https://www.naturediary.in/pelling-travel-guide/"
+    },
+    {
+      title: "Rimbi Waterfall",
+      distanceText: "≈ 30–40 min drive",
+      blurb: "A scenic cascade near Pelling, perfect for a refreshing stop.",
+      link: "https://www.travtasy.com/2019/06/places-to-visit-in-pelling-things-to-do.html"
+    }
+  ];
 
-const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
-  <Dialog open={isOpen} onOpenChange={onClose}>
-    <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden">
-      <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">Interactive Location Map</DialogTitle>
-      </DialogHeader>
-      <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop" 
-          alt="Interactive map showing Rumtek monastery location"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
-            📍 Rumtek Monastery
-          </div>
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle className="font-monastery text-2xl">Famous Places Nearby</DialogTitle>
+        </DialogHeader>
+
+        <div className="flex flex-col gap-6">
+          {nearbyPlaces.map((place) => (
+            <Card
+              key={place.title}
+              className="rounded-xl border bg-white shadow-sm hover:shadow-md transition-shadow"
+            >
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg">{place.title}</CardTitle>
+                <CardDescription>{place.distanceText}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col md:flex-row gap-4 md:items-start">
+                  {/* Text */}
+                  <div className="flex-1">
+                    <p className="text-sm text-muted-foreground leading-relaxed">{place.blurb}</p>
+                  </div>
+                  {/* Image / Link */}
+                  <div className="md:w-48">
+                    <a
+                      href={place.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open more about ${place.title}`}
+                      className="group block"
+                    >
+                      <img
+                        src={rumtekImage}
+                        alt={place.title}
+                        className="aspect-[4/3] w-full rounded-lg object-cover shadow transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-        <div className="absolute bottom-4 right-4">
-          <Button size="sm" className="btn-saffron">Get Directions</Button>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+
+
+const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  const rumtekCoordinates: L.LatLngExpression = [27.3017, 88.2394]; // Pemayangtse (near Pelling)
+  const rumtekName = "Pemayangtse Monastery";
+
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden">
+        <DialogHeader>
+          <DialogTitle className="font-monastery text-2xl">Interactive Location Map</DialogTitle>
+        </DialogHeader>
+        <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
+          <LeafletMapComponent
+            monasteryPosition={rumtekCoordinates}
+            monasteryName={rumtekName}
+            zoom={13}
+          />
         </div>
-      </div>
-    </DialogContent>
-  </Dialog>
-);
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -268,16 +399,29 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative bg-muted rounded-lg overflow-hidden">
         <iframe 
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-          title="Rumtek Monastery Video Tour"
+          src="https://www.youtube.com/embed/LL48yM1nFp8?si=6LlgacCDMllELS5Z" 
           className="w-[95%] h-[95%] mx-auto rounded-lg"
           style={{ aspectRatio: '16/9' }}
           allow="fullscreen"
+          title="Pemayangtse Monastery Video Tour"
         />
       </div>
     </DialogContent>
   </Dialog>
 );
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        src?: string;
+        alt?: string;
+        'camera-controls'?: boolean;
+        'auto-rotate'?: boolean;
+        style?: React.CSSProperties;
+      };
+    }
+  }
+}
 const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[95vh] overflow-hidden">
@@ -285,11 +429,12 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
         <DialogTitle className="font-monastery text-2xl">3D Model</DialogTitle>
       </DialogHeader>
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
-        <iframe 
-          src="https://sketchfab.com/models/12345678/embed" 
-          title="Rumtek Monastery 3D Model"
-          className="w-full h-full"
-          allow="fullscreen"
+        <model-viewer
+          src="/models/pemayangtse.glb"
+          alt="Pemayangtse Monastery 3D Model"
+          camera-controls
+          auto-rotate
+          style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
         />
       </div>
     </DialogContent>
@@ -302,9 +447,7 @@ export default function RumtekMonastery() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
-    'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1628624747186-a88c31695b88?w=800&h=600&fit=crop'
+    rumtekImage, rumtekImage2, rumtekImage3
   ];
 
   const openPopup = (popupName: string) => setActivePopup(popupName);
@@ -324,7 +467,7 @@ export default function RumtekMonastery() {
             Back to Home
           </Button>
           <h1 className="font-monastery text-3xl md:text-4xl font-bold">Pemayangtse Monastery</h1>
-          <p className="text-primary-foreground/90 mt-2">The Dharma Chakra Centre - Seat of the Karmapa</p>
+          <p className="text-primary-foreground/90 mt-2">Oldest Nyingma Seat of Sikkim, watching over Yuksom & Pelling</p>
         </div>
       </div>
 
@@ -333,7 +476,7 @@ export default function RumtekMonastery() {
         <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8 group">
           <img 
             src={images[currentImage]}
-            alt="Rumtek Monastery"
+            alt="Pemayangtse Monastery"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -368,38 +511,51 @@ export default function RumtekMonastery() {
           </div>
         </div>
 
+
         {/* Quick Info Cards */}
-        <div className="grid md:grid-cols-4 gap-4 mb-8">
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-          <CardContent className="pt-6">
-          <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-          <p className="font-medium">24 km from Gangtok</p>
-         <p className="text-sm text-muted-foreground">East Sikkim</p>
-          </CardContent>
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">~2 km from Pelling</p>
+              <p className="text-sm text-stone-600 mt-1">West Sikkim</p>
+            </CardContent>
           </Card>
 
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-            <CardContent className="pt-6">
-              <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">Founded 1966</p>
-              <p className="text-sm text-muted-foreground">16th Karmapa</p>
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-red-50 to-pink-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
+                <Calendar className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Founded 1705</p>
+              <p className="text-sm text-stone-600 mt-1">Chogyal Chakdor Namgyal</p>
             </CardContent>
           </Card>
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-            <CardContent className="pt-6">
-              <Users className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">300+ Monks</p>
-              <p className="text-sm text-muted-foreground">Karma Kagyu</p>
+
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-emerald-50 to-teal-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
+                <Users className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Ta-tshang Monks</p>
+              <p className="text-sm text-stone-600 mt-1">Nyingma Tradition</p>
             </CardContent>
           </Card>
-          <Card className="text-center transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer">
-            <CardContent className="pt-6">
-              <Star className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="font-medium">Most Important</p>
-              <p className="text-sm text-muted-foreground">Monastery in Sikkim</p>
+
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-indigo-50 to-violet-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
+                <Star className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Parent Nyingma Seat</p>
+              <p className="text-sm text-stone-600 mt-1">Sikkim</p>
             </CardContent>
           </Card>
         </div>
+
+
 
         {/* Action Buttons Grid */}
         <div className="grid md:grid-cols-8 gap-4 mb-8">
@@ -480,18 +636,81 @@ export default function RumtekMonastery() {
         {/* Main Content */}
         <div className="prose prose-slate max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, stands as the largest monastery in Sikkim 
-            and serves as the seat-in-exile of the Karmapa Lama. Built in the 1960s under the direction of the 
-            16th Karmapa, this magnificent monastery houses precious Buddhist artifacts and serves as a major 
-            center for Buddhist learning and meditation.
+            Pemayangtse Monastery is less a monument than a memory carved into the spine of Sikkim. Founded in the late 17th century under the patronage of the Chogyal rulers, it has long been the spiritual seat of the Nyingma tradition—the “ancient ones” of Tibetan Buddhism. Unlike later monasteries shaped by exile or politics, Pemayangtse’s identity is inward-facing, built to serve the land, the monarchy, and the spiritual continuity of Sikkim itself.
           </p>
           
           <p className="text-muted-foreground leading-relaxed">
-            The monastery's architecture reflects traditional Tibetan design, featuring intricate woodwork, 
-            vibrant murals, and golden stupas. The main shrine hall contains statues of Buddha and the 16th Karmapa, 
-            along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
+            Step inside Pemayangtse and the air feels older than stone. Its walls carry intricate wooden carvings, many depicting Padmasambhava—the guru-saint who tamed Himalayan demons into protectors. At the heart of the monastery lies the fabled seven-tiered wooden model of Sangtok Palri, a cosmic palace crafted over years by a single devoted lama. Every tier narrates realms of gods, demons, and guardians—turning the monastery itself into a map of unseen worlds.
           </p>
         </div>
+
+        {/* --- BEGIN: Extended Story Section --- */}
+        <div className="flex flex-col gap-12 mt-16">
+          {/* Section 1 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Oldest Voice of Sikkim</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Pemayangtse Monastery is less a monument than a memory carved into the spine of Sikkim. Founded in the late 17th century under the patronage of Chogyal rulers, it has long been the spiritual seat of the Nyingma tradition—the “ancient ones” of Tibetan Buddhism.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Unlike later monasteries shaped by exile or politics, Pemayangtse’s identity is inward-facing, built to serve the land, the monarchy, and the spiritual continuity of Sikkim itself.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Pemayangtse Monastery - Oldest Voice" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+
+          {/* Section 2 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Temple Woven in Wood and Myth</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Its walls carry intricate wooden carvings, many depicting Padmasambhava. At its heart lies the seven-tiered wooden model of Sangtok Palri—a cosmic palace painstakingly crafted by a single devoted lama.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Each tier narrates realms of gods, demons, and guardians—turning the monastery itself into a map of unseen worlds.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Pemayangtse Monastery - Wood & Myth" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+
+          {/* Section 3 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rituals of the Land and People</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                During the Cham festival, masked monks perform dances that locals believe cleanse the land of dark forces, their movements echoing storms, fire, and renewal.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                Incense curls through the air while villagers gather with quiet reverence—seeing not just religion, but protection for harvests, homes, and the fragile balance of life in the mountains.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Pemayangtse Monastery - Rituals" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+
+          {/* Section 4 */}
+          <div className="md:flex md:gap-8 items-start">
+            <div className="md:w-3/5">
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary Beyond Time</h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Sitting atop a ridge that surveys the ancient capital of Yuksom, the monastery feels like a guardian keeping watch over Sikkim’s origins. Prayer flags ripple against Kanchenjunga’s white face.
+              </p>
+              <p className="text-muted-foreground mt-4">
+                To linger here is to feel time loosen—where history, myth, and mountain meet in a silence that reshapes the traveler as much as the place.
+              </p>
+            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+              <img src={rumtekImage} alt="Pemayangtse Monastery - Sanctuary" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+            </div>
+          </div>
+        </div>
+        {/* --- END: Extended Story Section --- */}
       </div>
 
       {/* Popups */}
