@@ -9,11 +9,11 @@ import { JourneyModal } from '@/components/JourneyModal';
 import { useNavigate } from 'react-router-dom';
 
 // Import all images
-import seekerImage from '@/assets/rumtek.jpg';
-import pilgrimImage from '@/assets/rumtek.jpg';
-import loversImage from '@/assets/rumtek.jpg';
-import familyImage from '@/assets/rumtek.jpg';
-import adventurersImage from '@/assets/rumtek.jpg';
+import seekerImage from '@/assets/meditation.jpg';
+import pilgrimImage from '@/assets/spiritual.jpg';
+import loversImage from '@/assets/lover.jpg';
+import familyImage from '@/assets/family.jpg';
+import adventurersImage from '@/assets/adventure.jpg';
 
 export interface PersonaData {
   id: string;
