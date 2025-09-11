@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
+import '@google/model-viewer';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -278,18 +279,32 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
     </DialogContent>
   </Dialog>
 );
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        src?: string;
+        alt?: string;
+        'camera-controls'?: boolean;
+        'auto-rotate'?: boolean;
+        style?: React.CSSProperties;
+      };
+    }
+  }
+}
 const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[95vh] overflow-hidden">
       <DialogHeader>
         <DialogTitle className="font-monastery text-2xl">3D Model</DialogTitle>
       </DialogHeader>
-      <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
-        <iframe 
-          src="https://sketchfab.com/models/12345678/embed" 
-          title="Rumtek Monastery 3D Model"
-          className="w-full h-full"
-          allow="fullscreen"
+      <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+        <model-viewer
+          src="/models/rumtek.glb"
+          alt="Rumtek Monastery 3D Model"
+          camera-controls
+          auto-rotate
+          style={{ width: '100%', height: '100%', background: 'transparent' }}
         />
       </div>
     </DialogContent>
