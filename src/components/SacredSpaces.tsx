@@ -43,7 +43,7 @@ const monasteries = [
     location: 'Gangtok, East Sikkim',
     founded: '1909', 
     description: 'A significant Nyingma monastery known for its annual Cham dance and beautiful location overlooking Gangtok.',
-    image: 'https://images.unsplash.com/photo-1628624747186-a88c31695b88?w=400&h=300&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Enchey_Monastery_in_Gangtok_district%2C_East_Sikkim.jpg',
     hasVirtualTour: true,
     nextCeremony: 'Cham Dance - Dec 18'
   },
@@ -53,7 +53,7 @@ const monasteries = [
     location: 'Yuksom, West Sikkim',
     founded: '1701',
     description: 'The first monastery built in Sikkim, situated on a hilltop and known for its historical significance and peaceful atmosphere.',
-    image: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Dubdi_Monastery_2.jpg',
     hasVirtualTour: true,
     nextCeremony: 'Prayer Ceremony - Jan 20'
   },
@@ -63,7 +63,7 @@ const monasteries = [
     location: 'Pelling, West Sikkim',
     founded: '1697',
     description: 'The second oldest monastery in Sikkim, offering spectacular views of Kanchenjunga and renowned for its meditation retreats.',
-    image: 'https://images.unsplash.com/photo-1515552726023-7125c8d07fb3?w=400&h=300&fit=crop',
+    image: 'https://www.esikkimtourism.in/wp-content/uploads/2019/03/sanga-choeling-monasteryyy-booxx.jpg',
     hasVirtualTour: true,
     nextCeremony: 'Meditation Retreat - Feb 10'
   }
