@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
+import '@google/model-viewer';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -389,15 +390,15 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       </DialogHeader>
       <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop" 
+          src="https://cache.careers360.mobi/media/colleges/staticmap/2025/7/29/25647.png" 
           alt="Interactive map showing Rumtek monastery location"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">
             📍 Rumtek Monastery
           </div>
-        </div>
+        </div> */}
         <div className="absolute bottom-4 right-4">
           <Button size="sm" className="btn-saffron">Get Directions</Button>
         </div>
@@ -423,6 +424,19 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
     </DialogContent>
   </Dialog>
 );
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'model-viewer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        src?: string;
+        alt?: string;
+        'camera-controls'?: boolean;
+        'auto-rotate'?: boolean;
+        style?: React.CSSProperties;
+      };
+    }
+  }
+}
 const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[95vh] overflow-hidden">
@@ -430,12 +444,13 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
         <DialogTitle className="font-monastery text-2xl">3D Model</DialogTitle>
       </DialogHeader>
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
-        <iframe 
-          src="https://sketchfab.com/models/12345678/embed" 
-          title="Rumtek Monastery 3D Model"
-          className="w-full h-full"
-          allow="fullscreen"
-        />
+        <model-viewer
+  src="/models/rumtek.glb"
+  alt="Rumtek Monastery 3D Model"
+  camera-controls
+  auto-rotate
+  style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
+/>
       </div>
     </DialogContent>
   </Dialog>
