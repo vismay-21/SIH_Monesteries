@@ -4,6 +4,8 @@ import heroImage from '@/assets/hero-monastery.jpg';
 import { RitualCalendarPopup } from './RitualCalendarPopup';
 import { ExplorePopup } from './ExplorePopup';
 import { Button } from '@/components/ui/button';
+
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -216,7 +218,7 @@ export const HeroSection = () => {
             <Button
               size="lg"
               variant="default"
-              onClick={() => navigate("/highlights")}
+              onClick={() => navigate("/journey-planner")}
               className="font-body hover:bg-white hover:text-primary transition-transform duration-200 ease-in-out hover:scale-105 shadow-md hover:shadow-xl min-w-[200px]"
             >
               Highlights
