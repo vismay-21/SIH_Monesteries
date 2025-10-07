@@ -180,14 +180,12 @@ const JourneyPlanner = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handlePersonaClick = (persona: PersonaData) => {
-    if (persona.id === 'lovers') {
-      navigate('/lovers-journey');
-    } else {
-      setSelectedPersona(persona);
-      setIsModalOpen(true);
-    }
-  };
+
+const handlePersonaClick = (persona: PersonaData) => {
+  setSelectedPersona(persona);
+  setIsModalOpen(true);
+};
+
 
   const handleBackClick = () => {
     navigate('/');

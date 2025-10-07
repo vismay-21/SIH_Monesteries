@@ -430,7 +430,7 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
         <model-viewer
-          src="/models/pemayangtse.glb"
+          src="/models/rumtek.glb"
           alt="Pemayangtse Monastery 3D Model"
           camera-controls
           auto-rotate
