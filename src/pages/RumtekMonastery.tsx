@@ -653,6 +653,18 @@ export default function RumtekMonastery() {
           </Button>
         </div>
 
+          
+        {/* Simplified Audio Box */}
+        <div className="mb-6">
+          <audio
+            controls
+            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+          >
+            <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
         {/* Main Content */}
         <div className="prose prose-slate max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
