@@ -399,7 +399,7 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative bg-muted rounded-lg overflow-hidden">
         <iframe 
-          src="https://www.youtube.com/embed/LL48yM1nFp8?si=6LlgacCDMllELS5Z" 
+          src="https://www.youtube.com/embed/9JvxfFO2a6c?si=t6H2Mc6BvRTv14d_" 
           className="w-[95%] h-[95%] mx-auto rounded-lg"
           style={{ aspectRatio: '16/9' }}
           allow="fullscreen"
@@ -633,6 +633,17 @@ export default function RumtekMonastery() {
           </Button>
         </div>
 
+      {/* Simplified Audio Box */}
+        <div className="mb-6">
+          <audio
+            controls
+            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+          >
+            <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        
         {/* Main Content */}
         <div className="prose prose-slate max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
