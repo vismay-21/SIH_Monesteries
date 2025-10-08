@@ -450,7 +450,7 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
         <model-viewer
-  src="/models/rumtek.glb"
+  src="/SIH_monestries_images/sanga/sanga.glb"
   alt="Rumtek Monastery 3D Model"
   camera-controls
   auto-rotate
@@ -466,9 +466,14 @@ export default function RumtekMonastery() {
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
-  const images = [
-    rumtekImage, rumtekImage2, rumtekImage3
-  ];
+  // ...existing code...
+const images = [
+  "/SIH_monestries_images/sanga/sanga_1.jpg",
+  "/SIH_monestries_images/sanga/sanga_2.jpg",
+  "/SIH_monestries_images/sanga/sanga_3.jpg",
+  "/SIH_monestries_images/sanga/sanga_4.jpg"
+];
+// ...existing code...
 
   const openPopup = (popupName: string) => setActivePopup(popupName);
   const closePopup = () => setActivePopup(null);
@@ -694,7 +699,7 @@ export default function RumtekMonastery() {
               </p>
             </div>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src={rumtekImage} alt="Rumtek Monastery - Living Heart" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+              <img src="/SIH_monestries_images/sanga/sanga_1.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
             </div>
           </div>
 
@@ -713,7 +718,7 @@ export default function RumtekMonastery() {
               </p>
             </div>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src={rumtekImage} alt="Rumtek Monastery - Architecture" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+              <img src="/SIH_monestries_images/sanga/sanga_2.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
             </div>
           </div>
 
@@ -732,7 +737,7 @@ export default function RumtekMonastery() {
               </p>
             </div>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src={rumtekImage} alt="Rumtek Monastery - Golden Heart" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+              <img src="/SIH_monestries_images/sanga/sanga_3.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
             </div>
           </div>
 
@@ -751,7 +756,7 @@ export default function RumtekMonastery() {
               </p>
             </div>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src={rumtekImage} alt="Rumtek Monastery - Sanctuary for Seekers" className="rounded-xl shadow-lg w-full h-56 object-cover" />
+              <img src="/SIH_monestries_images/sanga/sanga_4.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
             </div>
           </div>
         </div>
