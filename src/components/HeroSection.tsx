@@ -29,7 +29,7 @@ export const HeroSection = () => {
   // ✅ Use Groq's OpenAI-compatible endpoint + a Groq model
   const API_URL = "https://api.groq.com/openai/v1/chat/completions";
   const MODEL = "llama-3.1-8b-instant"; // or "llama3-8b-8192"
-  const API_KEY = "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";
+  const API_KEY = "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";
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
