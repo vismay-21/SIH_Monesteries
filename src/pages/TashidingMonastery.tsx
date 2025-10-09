@@ -18,13 +18,13 @@ const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       <DialogHeader>
         <DialogTitle className="flex items-center gap-2 font-monastery text-2xl">
           <Camera className="w-6 h-6 text-primary" />
-          360° Virtual Tour - Main Prayer Hall
+          360° Virtual Tour - Main Temple
         </DialogTitle>
       </DialogHeader>
       <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=400&fit=crop" 
-          alt="360° view of Rumtek monastery interior"
+          alt="360° view of Tashiding monastery interior"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -54,7 +54,7 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">The Story of Rumtek</DialogTitle>
+        <DialogTitle className="font-monastery text-2xl">The History of Tashiding</DialogTitle>
       </DialogHeader>
       <div className="space-y-10">
         {/* Timeline Graphic */}
@@ -62,24 +62,56 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
           {/* rail: more vibrant and visible */}
           <div className="absolute left-6 top-0 bottom-0 w-1.5 bg-gradient-to-b from-saffron to-amber-500 rounded-full shadow-[inset_0_0_4px_rgba(0,0,0,0.15)]" />
           <div className="flex flex-col gap-10 ml-0 md:ml-12">
-            {/* 1734 */}
+            {/* c.1641 */}
             <div className="relative flex items-start gap-6">
-              {/* year badge: fits all labels */}
+              {/* year badge */}
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1734
+                  c.1641
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Birth of Rumtek</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Seeds of Sanctity</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  With blessings from the 9th Karmapa, Wangchuk Dorje, and patronage from Sikkim’s King, the first Rumtek Monastery rises—a jewel of Kagyu Buddhism in the Eastern Himalayas.
+                  Founded by Ngadak Sempa Chempo Phunshok Rigzing—one of the three monks who helped establish Sikkim’s Buddhist kingdom—on a heart-shaped hill.
                 </p>
-                <img src={rumtekImage} alt="Old Rumtek Monastery" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage} alt="Early Tashiding" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 18th–19th Century */}
+            {/* 1640s–1650s */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1640s–50s
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Selecting a Sacred Site</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Legend says Guru Padmasambhava chose the site by shooting an arrow, consecrating the hill and blessing the land.
+                </p>
+                <img src={rumtekImage2} alt="Legend of the site" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 1700s */}
+            <div className="relative flex items-start gap-6">
+              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
+                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
+                  1700s
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-monastery text-lg font-semibold mb-1">Enlargement & Spiritual Power</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Under early Chogyals—especially Chakdor Namgyal—Tashiding gained prominence as a Nyingma learning hub.
+                </p>
+                <img src={rumtekImage3} alt="Growth of Tashiding" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+              </div>
+            </div>
+
+            {/* 18th–19th C */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
@@ -87,78 +119,43 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">A Time of Change</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Architectural Flourishing</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Rumtek thrives for generations, but political shifts and time leave it weakened; by the mid-20th century, its once-grand halls fall into disrepair.
+                  Multi-storied wooden temples, curved beams, stupas and grand prayer halls—along with exquisite thangkas and sculptures—defined the complex.
                 </p>
-                <img src={rumtekImage2} alt="Rumtek in Disrepair" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage} alt="Architecture" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 1959 */}
+            {/* 20th Century */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1959
+                  20th C
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Exile and Renewal</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Challenges & Preservation</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  The 16th Karmapa, Rangjung Rigpe Dorje, escapes Tibet after the Chinese invasion, carrying relics, texts, and the spiritual legacy of the Karma Kagyu lineage.
+                  Despite earthquakes and time, restoration revived its religious art and architecture for future generations.
                 </p>
-                <img src={rumtekImage3} alt="Karmapa's Arrival" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage2} alt="Restoration" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 1960–1966 */}
+            {/* Today */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1960–66
+                  Today
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Rebuilding Faith</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Living Spiritual Sanctuary</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Invited by Sikkim’s Chogyal, the 16th Karmapa selects Rumtek’s auspicious site. With donations from devotees across India and abroad, a magnificent new monastery is constructed—faith and community chiseling stone into sanctuary.
+                  Tashiding draws pilgrims yearly—especially for the Bhumchu sacred-water ceremony—amid serene forests and mountains.
                 </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Construction of New Rumtek" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
-              </div>
-            </div>
-
-            {/* 1966 */}
-            <div className="relative flex items-start gap-6">
-              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
-                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1966
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">A New Seat-in-Exile</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  The 16th Karmapa enthrones Rumtek as his seat-in-exile. Sacred treasures—silk thangkas, statues, the 108-volume Kangyur—are installed, transforming Rumtek into the heartbeat of Tibetan Buddhism outside Tibet.
-                </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Installation of Sacred Treasures" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
-              </div>
-            </div>
-
-            {/* 1981 */}
-            <div className="relative flex items-start gap-6">
-              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
-                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1981
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Legacy Sealed</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Upon the Karmapa’s passing, his relics are enshrined within a glittering Golden Stupa, sealing Rumtek’s role as both refuge and eternal symbol of resilience.
-                </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Golden Stupa & Relics" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage3} alt="Today" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
           </div>
@@ -167,16 +164,16 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
         {/* Additional Details Section */}
         <div className="mt-12">
-          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Rumtek Today</h3>
+          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Tashiding Today</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Rumtek Monastery stands as a living testament to the resilience of Tibetan Buddhism. Its halls echo with the chants of monks, the debates of scholars, and the footsteps of pilgrims from around the world.
+            A revered Nyingma monastery perched above Yuksom, where ritual, scholarship, and mountain silence meet.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            The monastery is not only a spiritual center but also a hub for cultural preservation, hosting vibrant festivals, sacred rituals, and teachings that keep centuries-old traditions alive.
+            Incense, prayer flags, and festival rhythms—especially Bhumchu—keep centuries of living tradition alive.
           </p>
-          <img src={rumtekImage} alt="Rumtek Today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
+          <img src={rumtekImage} alt="Tashiding Today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
           <p className="text-muted-foreground leading-relaxed">
-            Visitors can explore its ornate architecture, meditate in tranquil courtyards, and witness the living heritage of the Karma Kagyu lineage—where every stone, thangka, and prayer wheel tells a story of faith and survival.
+            To visit is to step into a landscape where legend and nature hold a long, steady conversation.
           </p>
         </div>
       </div>
@@ -202,8 +199,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">From Gangtok: 24 km (45 minutes)</p>
-              <p className="text-xs text-muted-foreground">Shared taxis and buses available every 30 minutes</p>
+              <p className="text-sm text-muted-foreground mb-2">From Pelling: ~25 km (1–1.5 hrs) by shared taxis/jeeps</p>
+              <p className="text-xs text-muted-foreground">From Gangtok: ~100–115 km (4–5 hrs) via Yuksom/Pelling</p>
             </CardContent>
           </Card>
           <Card>
@@ -214,8 +211,7 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Private taxi: ₹800-1200</p>
-              <p className="text-xs text-muted-foreground">Well-maintained mountain roads</p>
+              <p className="text-sm text-muted-foreground mb-2">Taxi/private car from Yuksom or Pelling recommended</p>
             </CardContent>
           </Card>
           <Card>
@@ -226,8 +222,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Bagdogra: 125 km (4 hours)</p>
-              <p className="text-xs text-muted-foreground">Helicopter service available</p>
+              <p className="text-sm text-muted-foreground mb-2">Pakyong (~110 km, 4–5 hrs by road)</p>
+              <p className="text-xs text-muted-foreground">Helicopter service to Gangtok (seasonal)</p>
             </CardContent>
           </Card>
         </div>
@@ -267,23 +263,25 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                <span>Losar Festival</span>
-                <Badge className="bg-primary text-primary-foreground">February 15</Badge>
+                <span>Bhumchu Festival</span>
+                <Badge className="bg-primary text-primary-foreground">Feb–Mar</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Tibetan New Year celebration with traditional mask dances and festivities.</p>
+              <p className="text-sm text-muted-foreground">
+                Sacred-water ceremony on the 14th–15th day of the first Tibetan lunar month.
+              </p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                <span>Cham Dance</span>
-                <Badge className="bg-secondary text-secondary-foreground">Monthly</Badge>
+                <span>Losar Festival</span>
+                <Badge className="bg-secondary text-secondary-foreground">February</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Sacred masked dance performed by monks on the 10th day of every Tibetan month.</p>
+              <p className="text-sm text-muted-foreground">Tibetan New Year with Cham dances and community prayers.</p>
             </CardContent>
           </Card>
         </div>
@@ -295,40 +293,28 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const nearbyPlaces = [
     {
-      title: "Tashi View Point",
-      distanceText: "≈ 1 hr 30 min drive (35–40 km) from Rumtek",
-      blurb: "Sunrise hotspot with sweeping views of Kangchenjunga and the Eastern Himalayas.",
-      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/tashi-view-point.html"
+      title: "Dubdi Monastery",
+      distanceText: "≈ 10 km (short drive from Tashiding)",
+      blurb: "Among Sikkim’s oldest monasteries (1701), near Yuksom; tied to the kingdom’s founding.",
+      link: "https://sikkimtourism.gov.in/Public/PlacesToGo/dubdi"
     },
     {
-      title: "Do Drul Chorten",
-      distanceText: "≈ 45–50 min drive (22–25 km) from Rumtek",
-      blurb: "A striking white stupa encircled by 108 prayer wheels, radiating peace and devotion.",
-      link: "http://sikkimstdc.com/GeneralPages/Details/Do-Drul-Chorten/"
+      title: "Rabdentse Ruins",
+      distanceText: "≈ 12 km (short drive from Tashiding)",
+      blurb: "Moss-covered ruins of Sikkim’s old royal capital in a forest setting.",
+      link: "https://sikkimtourism.gov.in/Public/PlacesToGo/rabdentse"
     },
     {
-      title: "Enchey Monastery",
-      distanceText: "≈ 1 hr 10 min drive (32–35 km) from Rumtek",
-      blurb: "200-year-old monastery famed for its Cham mask dances and ornate Sikkimese murals.",
-      link: "https://gangtokdistrict.nic.in/tourist-place/enchey-monastery/"
+      title: "Khecheopalri Lake",
+      distanceText: "≈ 20 km (30–40 min drive)",
+      blurb: "A sacred wish-fulfilling lake surrounded by forests and legends.",
+      link: "https://sikkimtourism.gov.in/Public/PlacesToGo/khecheopalrilake"
     },
     {
-      title: "Banjhakri Falls & Energy Park",
-      distanceText: "≈ 45 min drive (20 km) from Rumtek",
-      blurb: "Lush green park with a roaring waterfall, bridges, and shamanic folklore sculptures.",
-      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/banjhakri-falls-and-energy-park.html"
-    },
-    {
-      title: "Namgyal Institute of Tibetology",
-      distanceText: "≈ 50 min drive (23 km) from Rumtek",
-      blurb: "Premier research hub showcasing rare Tibetan manuscripts, thangkas, and relics.",
-      link: "https://www.tibetology.sikkim.gov.in/"
-    },
-    {
-      title: "Hanuman Tok",
-      distanceText: "≈ 1 hr 15 min drive (30 km) from Rumtek",
-      blurb: "Hilltop Hanuman temple maintained by the Indian Army, offering pristine mountain vistas.",
-      link: "https://gangtokdistrict.nic.in/tourist-place/hanuman-tok/"
+      title: "Kanchenjunga Falls",
+      distanceText: "≈ 11 km (20–30 min drive)",
+      blurb: "Perennial waterfall sourced from Mt. Kanchenjunga’s glacial melt.",
+      link: "https://sikkimtourism.gov.in/Public/PlacesToGo/kanchenjungafalls"
     }
   ];
 
@@ -362,6 +348,7 @@ const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open more about ${place.title}`}
+
                       className="group block"
                     >
                       <img
@@ -384,8 +371,8 @@ const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
 
 
 const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const rumtekCoordinates: L.LatLngExpression = [27.3197, 88.5975]; // Latitude, Longitude for Rumtek
-  const rumtekName = "Rumtek Monastery";
+  const rumtekCoordinates: [number, number] = [27.294, 88.283]; // Tashiding approx
+  const rumtekName = "Tashiding Monastery";
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -401,12 +388,6 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
             zoom={13}
           />
         </div>
-        {/* The "Get Directions" button can be removed or re-implemented separately
-            if you desire a more advanced directions feature.
-        */}
-        {/* <div className="absolute bottom-4 right-4">
-          <Button size="sm" className="btn-saffron">Get Directions</Button>
-        </div> */}
       </DialogContent>
     </Dialog>
   );
@@ -423,7 +404,9 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
           src="https://www.youtube.com/embed/gesLZXRKhGY?si=YFde9bWdnm0Uprvd" 
           className="w-[95%] h-[95%] mx-auto rounded-lg"
           style={{ aspectRatio: '16/9' }}
-          allow="fullscreen"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          title="Tashiding Monastery Video Tour"
         />
       </div>
     </DialogContent>
@@ -451,7 +434,7 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
         <model-viewer
   src="/SIH_monestries_images/tashi/tashi.glb"
-  alt="Rumtek Monastery 3D Model"
+  alt="Tashiding Monastery 3D Model"
   camera-controls
   auto-rotate
   style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
@@ -461,7 +444,7 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   </Dialog>
 );
 
-export default function RumtekMonastery() {
+export default function TashidingMonastery() {
   const navigate = useNavigate();
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
@@ -491,8 +474,8 @@ const images = [
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Button>
-          <h1 className="font-monastery text-3xl md:text-4xl font-bold">Tashiding Moenstery</h1>
-          <p className="text-primary-foreground/90 mt-2">The Dharma Chakra Centre - Seat of the Karmapa</p>
+          <h1 className="font-monastery text-3xl md:text-4xl font-bold">Tashiding Monastery</h1>
+          <p className="text-primary-foreground/90 mt-2">The Heart of Sudden Satisfaction</p>
         </div>
       </div>
 
@@ -501,7 +484,7 @@ const images = [
         <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8 group">
           <img 
             src={images[currentImage]}
-            alt="Rumtek Monastery"
+            alt="Tashiding Monastery"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -537,15 +520,15 @@ const images = [
         </div>
 
 
- {/* Quick Info Cards – beautified */}
+ {/* Quick Info Cards – updated for Tashiding */}
 <div className="grid md:grid-cols-4 gap-6 mb-12">
   <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
     <CardContent className="py-8">
       <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
         <MapPin className="w-6 h-6" />
       </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">24 km from Gangtok</p>
-      <p className="text-sm text-stone-600 mt-1">East Sikkim</p>
+      <p className="text-base font-bold tracking-tight text-stone-800">West Sikkim, near Yuksom</p>
+      <p className="text-sm text-stone-600 mt-1">Hilltop setting</p>
     </CardContent>
   </Card>
 
@@ -554,8 +537,8 @@ const images = [
       <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
         <Calendar className="w-6 h-6" />
       </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">Founded 1966</p>
-      <p className="text-sm text-stone-600 mt-1">16th Karmapa</p>
+      <p className="text-base font-bold tracking-tight text-stone-800">Founded 1641</p>
+      <p className="text-sm text-stone-600 mt-1">Ngadak Sempa Chempo</p>
     </CardContent>
   </Card>
 
@@ -564,8 +547,8 @@ const images = [
       <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
         <Users className="w-6 h-6" />
       </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">300+ Monks</p>
-      <p className="text-sm text-stone-600 mt-1">Karma Kagyu</p>
+      <p className="text-base font-bold tracking-tight text-stone-800">Nyingma Tradition</p>
+      <p className="text-sm text-stone-600 mt-1">Living monastic seat</p>
     </CardContent>
   </Card>
 
@@ -574,8 +557,8 @@ const images = [
       <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
         <Star className="w-6 h-6" />
       </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">Sikkim’s Most Important</p>
-      <p className="text-sm text-stone-600 mt-1">Monastery</p>
+      <p className="text-base font-bold tracking-tight text-stone-800">Bhumchu Festival</p>
+      <p className="text-sm text-stone-600 mt-1">Sacred-water ritual</p>
     </CardContent>
   </Card>
 </div>
@@ -616,7 +599,7 @@ const images = [
             onClick={() => openPopup('famousPlaces')}
           >
             <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🏔️
+              🏔
             </div>
             Nearby Places
           </Button>
@@ -625,7 +608,7 @@ const images = [
             onClick={() => openPopup('interactiveMap')}
           >
             <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🗺️
+              🗺
             </div>
             Interactive Map
           </Button>
@@ -652,7 +635,7 @@ const images = [
             onClick={() => openPopup('3dModel')}
           >
             <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🖼️
+              🖼
             </div>
             3D Model
           </Button>
@@ -669,98 +652,110 @@ const images = [
           </audio>
         </div>
         
-        {/* Main Content */}
-        <div className="prose prose-slate max-w-none">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, stands as the largest monastery in Sikkim 
-            and serves as the seat-in-exile of the Karmapa Lama. Built in the 1960s under the direction of the 
-            16th Karmapa, this magnificent monastery houses precious Buddhist artifacts and serves as a major 
-            center for Buddhist learning and meditation.
-          </p>
-          
-          <p className="text-muted-foreground leading-relaxed">
-            The monastery's architecture reflects traditional Tibetan design, featuring intricate woodwork, 
-            vibrant murals, and golden stupas. The main shrine hall contains statues of Buddha and the 16th Karmapa, 
-            along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
-          </p>
-        </div>
+        {/* Main Content (REPLACED) */}
+<div className="flex flex-col gap-12 mt-2">
+  {/* 1) Intro */}
+  <div className="md:flex md:gap-8 items-start">
+    <div className="md:w-3/5">
+      <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+        Tashiding Monastery: A Divine Shrine of Sikkim
+      </h2>
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        Sited on a hill in West Sikkim, Tashiding Monastery is a symbol of ancient spiritual heritage and
+        cultural resistance. Founded in the 17th century, this monastery is sanctified as one of the holiest
+        places of pilgrimage in the region, said to possess great spiritual power and divine grace. It is named,
+        after all, "The Heart of Sudden Satisfaction" in the local Dzongkha language, due to its importance as a
+        site where believers crave liberation, healing, and spiritual satisfaction.
+      </p>
+    </div>
+    <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+      <img
+        src="/SIH_monestries_images/tashi/tashi_1.jpg"
+        alt="Tashiding Monastery hilltop"
+        className="w-full h-[300px] object-cover rounded-lg shadow-md"
+      />
+    </div>
+  </div>
 
-        {/* --- BEGIN: Extended Story Section --- */}
-        <div className="flex flex-col gap-12 mt-16">
-          {/* Section 1 */}
-          <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rumtek Monastery: The Living Heart of Tibet in Sikkim</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                For the traveler who seeks more than landscapes—for the one who listens for stories in stones and silence—Rumtek Monastery is not just a stop on the map. It is a journey into Tibet’s living heartbeat, carried across borders, revived in exile, and still breathing in the emerald folds of Sikkim’s hills.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Founded in the 16th century and rebuilt by the 16th Karmapa after his flight from Tibet, Rumtek is less a monument than a vessel of resilience. Every carved beam and prayer wheel tells a tale of survival, faith, and the timeless rhythm of devotion.
-              </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/tashi/tashi_1.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
-            </div>
-          </div>
+  {/* 2) Origins and Historical Significance */}
+  <div className="md:flex md:gap-8 items-start">
+    <div className="md:w-3/5">
+      <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+        Origins and Historical Significance
+      </h2>
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        Established in 1641 by the great Nyingma master Ngadak Sempa Chempo, Tashiding is an important site in
+        Sikkimese history. Constructed during a time of political unification, when Tibetan Buddhist power was
+        spreading into the Himalayas, the monastery was erected according to traditional geomantic principles,
+        positioning itself within harmony with the natural terrain to maximize its spiritual potency.
+      </p>
+      <p className="text-muted-foreground mt-4 leading-relaxed">
+        Legend surrounds the site, with stories of Guru Padmasambhava (also called Guru Rinpoche) meditating
+        there and conferring blessings that established the monastery’s spiritual authority. Tashiding’s spiritual
+        importance is strongly linked to the belief that it safeguards the region from negative energies and helps
+        maintain cosmic balance.
+      </p>
+    </div>
+    <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+      <img
+        src="/SIH_monestries_images/tashi/tashi_2.jpg"
+        alt="Origins and historical significance"
+        className="w-full h-[300px] object-cover rounded-lg shadow-md"
+      />
+    </div>
+  </div>
 
-          {/* Section 2 */}
-          <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">An Architectural Mandala</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Approaching Rumtek feels like stepping into a sacred universe painted in wood and stone. Modeled after the legendary Tsurphu Monastery of Tibet, its three-story structure fuses fortress strength with mandala symmetry.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Vibrant murals splash across walls with scenes of Buddhas, Bodhisattvas, and guardian deities. Carved dragons curl around golden pillars. Sunlight falls across silk thangkas and hand-woven carpets, setting them aglow. In the main hall, a ten-foot Sakyamuni Buddha watches with a serene gravity that seems to slow time.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                As visitors walk a kora—the circular path around the monastery—every spin of the prayer wheel, etched with ancient mantras, whispers blessings into the mountain wind.
-              </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/tashi/tashi_2.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
-            </div>
-          </div>
+  {/* 3) Architectural Elegance and Artistic Grandeur */}
+  <div className="md:flex md:gap-8 items-start">
+    <div className="md:w-3/5">
+      <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+        Architectural Elegance and Artistic Grandeur
+      </h2>
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        Tashiding Monastery is an excellent representation of classical Tibetan Buddhist architecture, with its
+        cluster of multi-level buildings that blend harmoniously with their environment. The principal temple,
+        constructed of the locally available wood and stone, has fine carvings and colorful paintings recounting
+        Buddhist scripture stories. The temple's curved roofs and intricately carved wooden facades are an
+        illustration of Sikkimese artisans' fine craftsmanship, combining utility with artistry.
+      </p>
+      <p className="text-muted-foreground mt-4 leading-relaxed">
+        Within, the halls of the monastery are decorated with huge thangkas, relics, and images of Buddhist gods,
+        such as Guru Padmasambhava in wrathful and calm manifestations. Murals of heavenly realms, demon gods
+        vanquished by divine armies, and Buddha's teachings, created using bold brushstrokes and brilliant colors
+        typical of Tibetan art, cover the walls.
+      </p>
+    </div>
+    <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+      <img
+        src="/SIH_monestries_images/tashi/tashi.jpg"
+        alt="Architecture and art at Tashiding"
+        className="w-full h-[300px] object-cover rounded-lg shadow-md"
+      />
+    </div>
+  </div>
 
-          {/* Section 3 */}
-          <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Golden Heart</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                At the center of Rumtek lies its spiritual treasure: the Golden Stupa. Inlaid with jewels and precious metals, it houses the relics of the 16th Karmapa. Surrounding murals depict cosmic landscapes where myth and mountain merge.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Across the courtyard stands the Karma Shri Nalanda Institute for Higher Buddhist Studies—an academic sanctum where monks debate, learn, and keep alive centuries of Buddhist philosophy. To witness them in debate, voices rising and hands clapping in ritual rhythm, is to glimpse an education system older than most nations.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                And then come the festivals. During Vajrakilaya Drupchen or Losar, the courtyard bursts with color and sound—masked dancers whirl, cymbals clash, and chants rise into the sky, drawing pilgrims, photographers, and seekers alike into an unforgettable celebration.
-              </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/tashi/tashi.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
-            </div>
-          </div>
+  {/* 4) Zangdok Palri */}
+  <div className="md:flex md:gap-8 items-start">
+    <div className="md:w-3/5">
+      <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Zangdok Palri</h2>
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        One of the most dramatic aspects of Tashiding is the "Zangdok Palri," a stunning seven-story wooden
+        replica of Guru Rinpoche's heavenly palace, carefully sculpted with exquisite carvings. Each story
+        depicts various stories of Buddhist cosmology, making the whole structure a moving chart of spiritual
+        worlds.
+      </p>
+    </div>
+    <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+      <img
+        src="/SIH_monestries_images/tashi/tashi_4.jpg"
+        alt="Zangdok Palri model"
+        className="w-full h-[300px] object-cover rounded-lg shadow-md"
+      />
+    </div>
+  </div>
+</div>
+{/* END Main Content (REPLACED) */}
 
-          {/* Section 4 */}
-          <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary for Seekers</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Rumtek is not designed for casual glances—it rewards those who linger. For the historian, it offers archives of rare Buddhist texts. For the spiritual traveler, it provides spaces scented with incense and draped with prayer flags that frame sweeping Himalayan vistas. For the storyteller, it is a canvas where devotion, art, and survival paint their intertwined tale.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Sit quietly on the stone steps, and you may hear the steady drone of monks chanting at dawn. Watch prayer flags flutter against snow peaks, and you may feel something shift within—something that belongs not just to the monastery, but to you.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Rumtek is less about visiting and more about returning—with more questions, more stillness, and a deeper reverence for a culture that endures in every stone, song, and shadow.
-              </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/tashi/tashi_4.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
-            </div>
-          </div>
-        </div>
-        {/* --- END: Extended Story Section --- */}
       </div>
 
       {/* Popups */}

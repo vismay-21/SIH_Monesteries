@@ -24,7 +24,7 @@ const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
       <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=400&fit=crop" 
-          alt="360° view of Rumtek monastery interior"
+          alt="360° view of Dubdi monastery interior"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -54,28 +54,27 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">The Story of Rumtek</DialogTitle>
+        <DialogTitle className="font-monastery text-2xl">The Story of Dubdi</DialogTitle>
       </DialogHeader>
       <div className="space-y-10">
         {/* Timeline Graphic */}
         <div className="relative px-2 py-6">
-          {/* rail: more vibrant and visible */}
+          {/* rail */}
           <div className="absolute left-6 top-0 bottom-0 w-1.5 bg-gradient-to-b from-saffron to-amber-500 rounded-full shadow-[inset_0_0_4px_rgba(0,0,0,0.15)]" />
           <div className="flex flex-col gap-10 ml-0 md:ml-12">
-            {/* 1734 */}
+            {/* c.1701 */}
             <div className="relative flex items-start gap-6">
-              {/* year badge: fits all labels */}
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1734
+                  c.1701
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Birth of Rumtek</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Birth of Dubdi</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  With blessings from the 9th Karmapa, Wangchuk Dorje, and patronage from Sikkim’s King, the first Rumtek Monastery rises—a jewel of Kagyu Buddhism in the Eastern Himalayas.
+                  Blessed by venerated Buddhist masters and aided by the first Chogyal of Sikkim, Phuntsog Namgyal, Dubdi Monastery was founded in 1701 as the very first Buddhist monastery in Sikkim. Situated on a picturesque hilltop in Yuksom, the ancient capital, it became the spiritual center of the young kingdom and a lasting symbol of Sikkimese Buddhism.
                 </p>
-                <img src={rumtekImage} alt="Old Rumtek Monastery" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage} alt="Early Dubdi hilltop" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
@@ -87,78 +86,43 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">A Time of Change</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Spiritual Foundation & Growth</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Rumtek thrives for generations, but political shifts and time leave it weakened; by the mid-20th century, its once-grand halls fall into disrepair.
+                  Dubdi Monastery prospered as a seat of the Nyingma school. It became a hub for religious learning, meditation, and ceremonies, reinforcing the interrelated spiritual and political underpinnings of Sikkim.
                 </p>
-                <img src={rumtekImage2} alt="Rumtek in Disrepair" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage2} alt="Dubdi growth era" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 1959 */}
+            {/* 20th Century */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1959
+                  20th C
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Exile and Renewal</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Resilience Amid Change</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  The 16th Karmapa, Rangjung Rigpe Dorje, escapes Tibet after the Chinese invasion, carrying relics, texts, and the spiritual legacy of the Karma Kagyu lineage.
+                  In spite of modernization and political shifts, Dubdi’s monastic community retained its heritage. Careful restoration kept its colorful murals and structure intact.
                 </p>
-                <img src={rumtekImage3} alt="Karmapa's Arrival" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage3} alt="Restoration at Dubdi" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 1960–1966 */}
+            {/* Today */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1960–66
+                  Today
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Rebuilding Faith</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">A Peaceful Haven</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Invited by Sikkim’s Chogyal, the 16th Karmapa selects Rumtek’s auspicious site. With donations from devotees across India and abroad, a magnificent new monastery is constructed—faith and community chiseling stone into sanctuary.
+                  Dubdi still resonates with ancient hymns and pious footsteps. Its two-story stonework with a gilded stupa shelters images of founding lamas and sacred texts that whisper the history of resilience and piety.
                 </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Construction of New Rumtek" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
-              </div>
-            </div>
-
-            {/* 1966 */}
-            <div className="relative flex items-start gap-6">
-              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
-                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1966
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">A New Seat-in-Exile</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  The 16th Karmapa enthrones Rumtek as his seat-in-exile. Sacred treasures—silk thangkas, statues, the 108-volume Kangyur—are installed, transforming Rumtek into the heartbeat of Tibetan Buddhism outside Tibet.
-                </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Installation of Sacred Treasures" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
-              </div>
-            </div>
-
-            {/* 1981 */}
-            <div className="relative flex items-start gap-6">
-              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
-                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1981
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Legacy Sealed</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Upon the Karmapa’s passing, his relics are enshrined within a glittering Golden Stupa, sealing Rumtek’s role as both refuge and eternal symbol of resilience.
-                </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Golden Stupa & Relics" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage} alt="Dubdi today" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
           </div>
@@ -167,24 +131,19 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
         {/* Additional Details Section */}
         <div className="mt-12">
-          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Rumtek Today</h3>
+          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Dubdi Today</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Rumtek Monastery stands as a living testament to the resilience of Tibetan Buddhism. Its halls echo with the chants of monks, the debates of scholars, and the footsteps of pilgrims from around the world.
+            A pilgrimage to Dubdi is not an excursion but a journey to Sikkim’s holy roots—where each prayer wheel, fresco, and beam speaks of devotion and endurance.
           </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            The monastery is not only a spiritual center but also a hub for cultural preservation, hosting vibrant festivals, sacred rituals, and teachings that keep centuries-old traditions alive.
-          </p>
-          <img src={rumtekImage} alt="Rumtek Today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
+          <img src={rumtekImage} alt="Dubdi courtyard today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
           <p className="text-muted-foreground leading-relaxed">
-            Visitors can explore its ornate architecture, meditate in tranquil courtyards, and witness the living heritage of the Karma Kagyu lineage—where every stone, thangka, and prayer wheel tells a story of faith and survival.
+            In Yuksom’s quiet hills, Dubdi remains a sanctuary of learning, prayer, and living tradition.
           </p>
         </div>
       </div>
     </DialogContent>
   </Dialog>
 );
-
-
 
 const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -202,8 +161,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">From Gangtok: 24 km (45 minutes)</p>
-              <p className="text-xs text-muted-foreground">Shared taxis and buses available every 30 minutes</p>
+              <p className="text-sm text-muted-foreground mb-2">From Gangtok: ~120 km (4–5 hrs)</p>
+              <p className="text-xs text-muted-foreground">From Pelling: ~40 km (≈2 hrs). Shared taxis & buses to Yuksom.</p>
             </CardContent>
           </Card>
           <Card>
@@ -214,8 +173,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Private taxi: ₹800-1200</p>
-              <p className="text-xs text-muted-foreground">Well-maintained mountain roads</p>
+              <p className="text-sm text-muted-foreground mb-2">Private taxi (Gangtok→Yuksom): ₹1500–2000</p>
+              <p className="text-xs text-muted-foreground">Mountain roads; check weather during monsoons.</p>
             </CardContent>
           </Card>
           <Card>
@@ -226,8 +185,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Bagdogra: 125 km (4 hours)</p>
-              <p className="text-xs text-muted-foreground">Helicopter service available</p>
+              <p className="text-sm text-muted-foreground mb-2">Bagdogra (~150 km; 5–6 hrs)</p>
+              <p className="text-xs text-muted-foreground">Helicopter facility Bagdogra ↔ Gangtok (seasonal)</p>
             </CardContent>
           </Card>
         </div>
@@ -255,35 +214,41 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="font-medium text-sm mb-1">Morning Prayers</p>
-                  <p className="text-xs text-muted-foreground">5:30 AM - 7:00 AM</p>
+                  <p className="text-xs text-muted-foreground">≈ 6:00 AM – 7:00 AM</p>
                 </div>
                 <div>
                   <p className="font-medium text-sm mb-1">Evening Prayers</p>
-                  <p className="text-xs text-muted-foreground">6:00 PM - 7:30 PM</p>
+                  <p className="text-xs text-muted-foreground">≈ 5:30 PM – 6:30 PM</p>
                 </div>
               </div>
             </CardContent>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span>Losar Festival</span>
-                <Badge className="bg-primary text-primary-foreground">February 15</Badge>
+                <Badge className="bg-primary text-primary-foreground">Feb–Mar (lunar)</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Tibetan New Year celebration with traditional mask dances and festivities.</p>
+              <p className="text-sm text-muted-foreground">
+                Tibetan New Year in the Yuksom region; local community prayers and small traditional ceremonies occur around Dubdi.
+              </p>
             </CardContent>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                <span>Cham Dance</span>
+                <span>Monthly / Special Pujas</span>
                 <Badge className="bg-secondary text-secondary-foreground">Monthly</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Sacred masked dance performed by monks on the 10th day of every Tibetan month.</p>
+              <p className="text-sm text-muted-foreground">
+                Special pujas and offerings on auspicious lunar days; occasional initiation ceremonies and blessings (generally small-scale).
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -295,40 +260,34 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const nearbyPlaces = [
     {
-      title: "Tashi View Point",
-      distanceText: "≈ 1 hr 30 min drive (35–40 km) from Rumtek",
-      blurb: "Sunrise hotspot with sweeping views of Kangchenjunga and the Eastern Himalayas.",
-      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/tashi-view-point.html"
+      title: "Coronation Throne of Norbugang",
+      distanceText: "≈ 3 km (≈10 min) from Dubdi",
+      blurb: "Historic site of the first Chogyal’s coronation (1642) with the celebrated Coronation Throne.",
+      link: "#"
     },
     {
-      title: "Do Drul Chorten",
-      distanceText: "≈ 45–50 min drive (22–25 km) from Rumtek",
-      blurb: "A striking white stupa encircled by 108 prayer wheels, radiating peace and devotion.",
-      link: "http://sikkimstdc.com/GeneralPages/Details/Do-Drul-Chorten/"
+      title: "Kathok Lake",
+      distanceText: "≈ 6 km (≈15 min) from Dubdi",
+      blurb: "A serene holy lake linked to Lama Kathok Kuntu Zangpo; scenic and spiritually significant.",
+      link: "#"
     },
     {
-      title: "Enchey Monastery",
-      distanceText: "≈ 1 hr 10 min drive (32–35 km) from Rumtek",
-      blurb: "200-year-old monastery famed for its Cham mask dances and ornate Sikkimese murals.",
-      link: "https://gangtokdistrict.nic.in/tourist-place/enchey-monastery/"
+      title: "Yuksom Village",
+      distanceText: "≈ 3 km (≈10 min) from Dubdi",
+      blurb: "Former capital of Sikkim—traditional architecture, local culture, and gorgeous valley views.",
+      link: "#"
     },
     {
-      title: "Banjhakri Falls & Energy Park",
-      distanceText: "≈ 45 min drive (20 km) from Rumtek",
-      blurb: "Lush green park with a roaring waterfall, bridges, and shamanic folklore sculptures.",
-      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/banjhakri-falls-and-energy-park.html"
+      title: "Khangchendzonga National Park",
+      distanceText: "≈ 5 km (entrance) from Dubdi",
+      blurb: "UNESCO World Heritage Site; diverse flora & fauna, treks, and dramatic Himalayan landscapes.",
+      link: "#"
     },
     {
-      title: "Namgyal Institute of Tibetology",
-      distanceText: "≈ 50 min drive (23 km) from Rumtek",
-      blurb: "Premier research hub showcasing rare Tibetan manuscripts, thangkas, and relics.",
-      link: "https://www.tibetology.sikkim.gov.in/"
-    },
-    {
-      title: "Hanuman Tok",
-      distanceText: "≈ 1 hr 15 min drive (30 km) from Rumtek",
-      blurb: "Hilltop Hanuman temple maintained by the Indian Army, offering pristine mountain vistas.",
-      link: "https://gangtokdistrict.nic.in/tourist-place/hanuman-tok/"
+      title: "Tashi Tenka",
+      distanceText: "≈ 4 km (≈15 min) from Dubdi",
+      blurb: "Panoramic viewpoint of Mount Kangchenjunga and the Himalayas, especially stunning at sunrise.",
+      link: "#"
     }
   ];
 
@@ -381,11 +340,10 @@ const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   );
 };
 
-
-
 const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const rumtekCoordinates: L.LatLngExpression = [27.3197, 88.5975]; // Latitude, Longitude for Rumtek
-  const rumtekName = "Rumtek Monastery";
+  // Updated to Dubdi Monastery (Yuksom)
+  const rumtekCoordinates: L.LatLngExpression = [27.375, 88.258]; 
+  const rumtekName = "Dubdi Monastery (Yuksom)";
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -393,7 +351,6 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
         <DialogHeader>
           <DialogTitle className="font-monastery text-2xl">Interactive Location Map</DialogTitle>
         </DialogHeader>
-        {/* REPLACED THIS SECTION with LeafletMapComponent */}
         <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
           <LeafletMapComponent
             monasteryPosition={rumtekCoordinates}
@@ -401,12 +358,6 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
             zoom={13}
           />
         </div>
-        {/* The "Get Directions" button can be removed or re-implemented separately
-            if you desire a more advanced directions feature.
-        */}
-        {/* <div className="absolute bottom-4 right-4">
-          <Button size="sm" className="btn-saffron">Get Directions</Button>
-        </div> */}
       </DialogContent>
     </Dialog>
   );
@@ -429,6 +380,7 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
     </DialogContent>
   </Dialog>
 );
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -450,12 +402,12 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
         <model-viewer
-  src="/SIH_monestries_images/dubdi/dubdi.glb"
-  alt="Rumtek Monastery 3D Model"
-  camera-controls
-  auto-rotate
-  style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
-/>
+          src="/SIH_monestries_images/dubdi/dubdi.glb"
+          alt="Dubdi Monastery 3D Model"
+          camera-controls
+          auto-rotate
+          style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
+        />
       </div>
     </DialogContent>
   </Dialog>
@@ -466,14 +418,12 @@ export default function RumtekMonastery() {
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
-  // ...existing code...
-const images = [
-  "/SIH_monestries_images/dubdi/dubdi_1.jpg",
-  "/SIH_monestries_images/dubdi/dubdi_2.jpg",
-  "/SIH_monestries_images/dubdi/dubdi_3.jpg",
-  "/SIH_monestries_images/dubdi/dubdi_4.jpg"
-];
-// ...existing code...
+  const images = [
+    "/SIH_monestries_images/dubdi/dubdi_1.jpg",
+    "/SIH_monestries_images/dubdi/dubdi_2.jpg",
+    "/SIH_monestries_images/dubdi/dubdi_3.jpg",
+    "/SIH_monestries_images/dubdi/dubdi_4.jpg"
+  ];
 
   const openPopup = (popupName: string) => setActivePopup(popupName);
   const closePopup = () => setActivePopup(null);
@@ -501,7 +451,7 @@ const images = [
         <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden mb-8 group">
           <img 
             src={images[currentImage]}
-            alt="Rumtek Monastery"
+            alt="Dubdi Monastery"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -536,231 +486,209 @@ const images = [
           </div>
         </div>
 
+        {/* --- Popup Triggers ---------------------------------------------------- */}
+<div className="grid md:grid-cols-8 gap-4 mb-8">
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('history')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">📖</div>
+    History
+  </Button>
 
- {/* Quick Info Cards – beautified */}
-<div className="grid md:grid-cols-4 gap-6 mb-12">
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
-        <MapPin className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">24 km from Gangtok</p>
-      <p className="text-sm text-stone-600 mt-1">East Sikkim</p>
-    </CardContent>
-  </Card>
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('travelRoutes')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🚌</div>
+    Travel Routes
+  </Button>
 
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-red-50 to-pink-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
-        <Calendar className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">Founded 1966</p>
-      <p className="text-sm text-stone-600 mt-1">16th Karmapa</p>
-    </CardContent>
-  </Card>
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('rituals')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🙏</div>
+    Rituals
+  </Button>
 
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-emerald-50 to-teal-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
-        <Users className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">300+ Monks</p>
-      <p className="text-sm text-stone-600 mt-1">Karma Kagyu</p>
-    </CardContent>
-  </Card>
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('famousPlaces')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🏔️</div>
+    Nearby Places
+  </Button>
 
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-indigo-50 to-violet-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
-        <Star className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">Sikkim’s Most Important</p>
-      <p className="text-sm text-stone-600 mt-1">Monastery</p>
-    </CardContent>
-  </Card>
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('interactiveMap')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🗺️</div>
+    Interactive Map
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('virtualTour')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">📹</div>
+    360° Tour
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('video')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🎥</div>
+    Video
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('3dModel')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🖼️</div>
+    3D Model
+  </Button>
 </div>
 
 
+        {/* Quick Info Cards – unchanged */}
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">24 km from Gangtok</p>
+              <p className="text-sm text-stone-600 mt-1">East Sikkim</p>
+            </CardContent>
+          </Card>
 
-        {/* Action Buttons Grid */}
-        <div className="grid md:grid-cols-8 gap-4 mb-8">
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('history')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              📖
-            </div>
-            History
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('travelRoutes')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🚌
-            </div>
-            Travel Routes
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('rituals')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🙏
-            </div>
-            Rituals
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('famousPlaces')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🏔️
-            </div>
-            Nearby Places
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('interactiveMap')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🗺️
-            </div>
-            Interactive Map
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('virtualTour')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              📹
-            </div>
-            360° Tour
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('video')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🎥
-            </div>
-            Video
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('3dModel')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🖼️
-            </div>
-            3D Model
-          </Button>
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-red-50 to-pink-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
+                <Calendar className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Founded 1966</p>
+              <p className="text-sm text-stone-600 mt-1">16th Karmapa</p>
+            </CardContent>
+          </Card>
+
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-emerald-50 to-teal-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
+                <Users className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">300+ Monks</p>
+              <p className="text-sm text-stone-600 mt-1">Karma Kagyu</p>
+            </CardContent>
+          </Card>
+
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-indigo-50 to-violet-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
+                <Star className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Sikkim’s Most Important</p>
+              <p className="text-sm text-stone-600 mt-1">Monastery</p>
+            </CardContent>
+          </Card>
         </div>
 
-      {/* Simplified Audio Box */}
-        <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-        
-        {/* Main Content */}
-        <div className="prose prose-slate max-w-none">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, stands as the largest monastery in Sikkim 
-            and serves as the seat-in-exile of the Karmapa Lama. Built in the 1960s under the direction of the 
-            16th Karmapa, this magnificent monastery houses precious Buddhist artifacts and serves as a major 
-            center for Buddhist learning and meditation.
-          </p>
-          
-          <p className="text-muted-foreground leading-relaxed">
-            The monastery's architecture reflects traditional Tibetan design, featuring intricate woodwork, 
-            vibrant murals, and golden stupas. The main shrine hall contains statues of Buddha and the 16th Karmapa, 
-            along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
-          </p>
-        </div>
-
-        {/* --- BEGIN: Extended Story Section --- */}
-        <div className="flex flex-col gap-12 mt-16">
-          {/* Section 1 */}
+        {/* Main Content (Dubdi) — 4 sections, images aligned as before */}
+        <div className="flex flex-col gap-12 mt-2 not-prose">
+          {/* Section 1: Intro + Sacred Refuge */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rumtek Monastery: The Living Heart of Tibet in Sikkim</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                Dubdi Monastery: Sikkim's Spiritual Dawn Sanctuary of Old
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                For the traveler who seeks more than landscapes—for the one who listens for stories in stones and silence—Rumtek Monastery is not just a stop on the map. It is a journey into Tibet’s living heartbeat, carried across borders, revived in exile, and still breathing in the emerald folds of Sikkim’s hills.
+                For the traveler who dreams to tread the footsteps of Sikkim's first Buddhist travelers, Dubdi Monastery is more than architecture or art—it is a view into the fledgling heartbeat of Himalayan religion. Sitting atop a peaceful hill in the ancient capital of Yuksom, Dubdi sits imposing, a guardian of the oldest Tibetan Buddhist heritage in the land, reverently holding centuries of faith, learning, and holy ritual.
               </p>
-              <p className="text-muted-foreground mt-4">
-                Founded in the 16th century and rebuilt by the 16th Karmapa after his flight from Tibet, Rumtek is less a monument than a vessel of resilience. Every carved beam and prayer wheel tells a tale of survival, faith, and the timeless rhythm of devotion.
+              <h3 className="font-monastery text-xl font-semibold mt-6 mb-2 text-saffron">The Sacred Refuge</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Founded in the early 18th century, Dubdi Monastery was conceived from a divine vision and sanctified with the blessings of the newly enthroned Chogyal of Sikkim, Phuntsog Namgyal. This holy place was designed as a stronghold of religious resilience, envisioned to sustain both the changing political realities and the unshakeable faith of Sikkim's citizens. The monastery is not just a wooden and stone structure—it is a living haven where the prayers resound, and the spiritual lineage whispers softly in all its nooks.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/dubdi/dubdi_1.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/dubdi/dubdi_1.jpg"
+                alt="Dubdi Monastery hillside view"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
             </div>
           </div>
 
-          {/* Section 2 */}
+          {/* Section 2: Architectural Serenity */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">An Architectural Mandala</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                Architectural Serenity and Devotional Artistry
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Approaching Rumtek feels like stepping into a sacred universe painted in wood and stone. Modeled after the legendary Tsurphu Monastery of Tibet, its three-story structure fuses fortress strength with mandala symmetry.
+                As one approaches Dubdi, one enters into an intimate yet deep harmony of design and faith. Constructed of local stone and wood, the two-story monastery is imbued with Tibetan monastic flavor tempered by the understatement appropriate to its hill-country setting. The steeply tapering roof surmounted by a gilded stupa glows with symbolic light, a spiritual landmark that welcomes wayfaring spirits.
               </p>
-              <p className="text-muted-foreground mt-4">
-                Vibrant murals splash across walls with scenes of Buddhas, Bodhisattvas, and guardian deities. Carved dragons curl around golden pillars. Sunlight falls across silk thangkas and hand-woven carpets, setting them aglow. In the main hall, a ten-foot Sakyamuni Buddha watches with a serene gravity that seems to slow time.
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Within, the central hall is a museum of divinely inspired art. Its walls are covered in rich frescoes, illustrating Buddhist saints, fierce guardians, and cosmic sagas. The vividness of these wall paintings is harmonized with the reverent stillness in the soft flame of candles. Hand-carved wooden pillars—adorned with lotus flowers and auspicious designs—are rising rhythmically, enclosing series of prayer wheels to quietly supplicate.
               </p>
-              <p className="text-muted-foreground mt-4">
-                As visitors walk a kora—the circular path around the monastery—every spin of the prayer wheel, etched with ancient mantras, whispers blessings into the mountain wind.
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                The altar is home to venerated images of Shakyamuni Buddha, flanked by Guru Padmasambhava, whose wise presence pervades the whole monastery, and Chenrizi, in whom compassion takes physical form. Here, time appears to stand still, shrouded in the incense mist and the monotonous beat of the temple bell.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/dubdi/dubdi_2.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/dubdi/dubdi_2.jpg"
+                alt="Dubdi Monastery interiors and murals"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
             </div>
           </div>
 
-          {/* Section 3 */}
+          {/* Section 3: Rituals of Time */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Golden Heart</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                The Rituals of Time
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                At the center of Rumtek lies its spiritual treasure: the Golden Stupa. Inlaid with jewels and precious metals, it houses the relics of the 16th Karmapa. Surrounding murals depict cosmic landscapes where myth and mountain merge.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Across the courtyard stands the Karma Shri Nalanda Institute for Higher Buddhist Studies—an academic sanctum where monks debate, learn, and keep alive centuries of Buddhist philosophy. To witness them in debate, voices rising and hands clapping in ritual rhythm, is to glimpse an education system older than most nations.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                And then come the festivals. During Vajrakilaya Drupchen or Losar, the courtyard bursts with color and sound—masked dancers whirl, cymbals clash, and chants rise into the sky, drawing pilgrims, photographers, and seekers alike into an unforgettable celebration.
+                Dubdi’s essence reveals itself fully during its sacred festivals and daily rites. Pilgrims and monks alike gather for Cham dances—masked performances where myth and reality merge, purifying negativity and invoking blessings. The monastery’s spiritual calendar is detailed and deeply woven into the life of the community, marking the passage of seasons and the rhythm of ancient spiritual practices.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/dubdi/dubdi_3.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/dubdi/dubdi_3.jpg"
+                alt="Dubdi Monastery rituals"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
             </div>
           </div>
 
-          {/* Section 4 */}
+          {/* Section 4: A Place Beyond Time */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary for Seekers</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                A Place Beyond Time
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Rumtek is not designed for casual glances—it rewards those who linger. For the historian, it offers archives of rare Buddhist texts. For the spiritual traveler, it provides spaces scented with incense and draped with prayer flags that frame sweeping Himalayan vistas. For the storyteller, it is a canvas where devotion, art, and survival paint their intertwined tale.
+                To go to Dubdi Monastery is to witness a prayer in living stone, wood, and tradition. It is a place of spiritual solace, a cultural jewel, and a silent testament to survival. Here, faith is carved into each stroke and cut into every beam. The monastery invites not only the eyes to behold but the heart to feel—to sense the abiding link between land, faith, and people against the resplendent Himalayan backdrop.
               </p>
-              <p className="text-muted-foreground mt-4">
-                Sit quietly on the stone steps, and you may hear the steady drone of monks chanting at dawn. Watch prayer flags flutter against snow peaks, and you may feel something shift within—something that belongs not just to the monastery, but to you.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Rumtek is less about visiting and more about returning—with more questions, more stillness, and a deeper reverence for a culture that endures in every stone, song, and shadow.
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Sit for a moment on the monastery’s steps, breathe in its serene air, and listen for the chant that transcends centuries. In Dubdi’s silent sanctuary, the ancient soul of Sikkim quietly lives on.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/dubdi/dubdi_4.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/dubdi/dubdi_4.jpg"
+                alt="Dubdi Monastery prayer courtyard"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
             </div>
           </div>
         </div>
-        {/* --- END: Extended Story Section --- */}
+        {/* --- END: Main Content --- */}
       </div>
 
       {/* Popups */}
