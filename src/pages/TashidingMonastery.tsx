@@ -1,6 +1,8 @@
 import rumtekImage from '../assets/rumtek.jpg';
 import rumtekImage2 from '../assets/rumtek2.jpg';
 import rumtekImage3 from '../assets/rumtek3.jpg';
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 import { useState } from 'react';
 import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -464,6 +466,7 @@ const images = [
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
+      <Header/>
       <div className="bg-primary text-primary-foreground py-4">
         <div className="max-w-7xl mx-auto px-6">
           <Button 
@@ -757,7 +760,7 @@ const images = [
 {/* END Main Content (REPLACED) */}
 
       </div>
-
+      <Footer/>
       {/* Popups */}
       <VirtualTourPopup isOpen={activePopup === 'virtualTour'} onClose={closePopup} />
       <HistoryPopup isOpen={activePopup === 'history'} onClose={closePopup} />

@@ -4,6 +4,7 @@ import heroImage from '@/assets/hero-monastery.jpg';
 import { RitualCalendarPopup } from './RitualCalendarPopup';
 import { ExplorePopup } from './ExplorePopup';
 import { Button } from '@/components/ui/button';
+import Footer from "@/components/common/Footer";
 
 
 import {
@@ -299,6 +300,7 @@ export const HeroSection = () => {
           </form>
         </div>
       )}
+      <Footer/>
 
       {/* Popups */}
       <RitualCalendarPopup isOpen={calendarOpen} onClose={() => setCalendarOpen(false)} />

@@ -3,6 +3,8 @@ import rumtekImage2 from '../assets/architecture_rumtek.jpg';
 import rumtekImage3 from '../assets/golden_heart_rumtek.jpg';
 import rumtekImage4 from '../assets/seekers_rumtek.jpg';
 import rumtekImage5 from '../assets/living_heart_rumtek.jpg';
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 import { useState } from 'react';
 import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,6 +14,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -482,6 +485,7 @@ const images = [
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
+      <Header/>
       <div className="bg-primary text-primary-foreground py-4">
         <div className="max-w-7xl mx-auto px-6">
           <Button 
@@ -761,6 +765,8 @@ const images = [
         </div>
         {/* --- END: Extended Story Section --- */}
       </div>
+
+      <Footer/>
 
       {/* Popups */}
       <VirtualTourPopup isOpen={activePopup === 'virtualTour'} onClose={closePopup} />
