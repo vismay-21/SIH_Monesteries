@@ -673,7 +673,7 @@ export default function PemayangtseMonastery() {
             controls
             className="w-[50%] md:w-[25%] rounded-lg shadow-md"
           >
-            <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
+            <source src="/SIH_monestries_images/pema/pemaspeech.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         </div>
