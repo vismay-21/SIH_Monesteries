@@ -54,111 +54,75 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   <Dialog open={isOpen} onOpenChange={onClose}>
     <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="font-monastery text-2xl">The Story of Rumtek</DialogTitle>
+        <DialogTitle className="font-monastery text-2xl">The Story of Enchey</DialogTitle>
       </DialogHeader>
       <div className="space-y-10">
         {/* Timeline Graphic */}
         <div className="relative px-2 py-6">
-          {/* rail: more vibrant and visible */}
+          {/* rail */}
           <div className="absolute left-6 top-0 bottom-0 w-1.5 bg-gradient-to-b from-saffron to-amber-500 rounded-full shadow-[inset_0_0_4px_rgba(0,0,0,0.15)]" />
           <div className="flex flex-col gap-10 ml-0 md:ml-12">
-            {/* 1734 */}
+            {/* c.1840 */}
             <div className="relative flex items-start gap-6">
-              {/* year badge: fits all labels */}
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1734
+                  c.1840
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Birth of Rumtek</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Beginnings and Foundations</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  With blessings from the 9th Karmapa, Wangchuk Dorje, and patronage from Sikkim’s King, the first Rumtek Monastery rises—a jewel of Kagyu Buddhism in the Eastern Himalayas.
+                  Lama Drubthob Karpo, famed for his occult powers and spiritual mastery, establishes a humble hermitage on the hill above Gangtok—planting the seed of Enchey Monastery.
                 </p>
-                <img src={rumtekImage} alt="Old Rumtek Monastery" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage} alt="Early Enchey hermitage" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 18th–19th Century */}
+            {/* 1908–1909 */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  18th–19th C
+                  1908–1909
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">A Time of Change</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Reconstruction & Architectural Flourish</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Rumtek thrives for generations, but political shifts and time leave it weakened; by the mid-20th century, its once-grand halls fall into disrepair.
+                  Under the 10th Chogyal, Sidkeong Tulku Namgyal, Enchey is rebuilt into its present form. The design blends Chinese pagoda cues with Tibetan–Sikkimese styles: whitewashed walls, reddish trims, and intricate wooden windows.
                 </p>
-                <img src={rumtekImage2} alt="Rumtek in Disrepair" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage2} alt="Reconstruction of Enchey Monastery" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 1959 */}
+            {/* 20th Century */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1959
+                  20th C
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Exile and Renewal</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">Preservation & Growing Impact</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  The 16th Karmapa, Rangjung Rigpe Dorje, escapes Tibet after the Chinese invasion, carrying relics, texts, and the spiritual legacy of the Karma Kagyu lineage.
+                  Despite urban pressures, Enchey remains a vital religious center. Ongoing conservation safeguards murals, statues, and ritual practice—keeping meditation, study, and ceremony alive.
                 </p>
-                <img src={rumtekImage3} alt="Karmapa's Arrival" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage3} alt="Preservation work at Enchey" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
 
-            {/* 1960–1966 */}
+            {/* Present Day */}
             <div className="relative flex items-start gap-6">
               <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
                 <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1960–66
+                  Today
                 </span>
               </div>
               <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Rebuilding Faith</h3>
+                <h3 className="font-monastery text-lg font-semibold mb-1">A Living Spiritual Center</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Invited by Sikkim’s Chogyal, the 16th Karmapa selects Rumtek’s auspicious site. With donations from devotees across India and abroad, a magnificent new monastery is constructed—faith and community chiseling stone into sanctuary.
+                  Monks recite daily prayers; pilgrims gather for Pang Lhabsol and vibrant Cham dances each year. Enchey remains rooted in local spirituality, offering calm and continuity to visitors.
                 </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Construction of New Rumtek" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
-              </div>
-            </div>
-
-            {/* 1966 */}
-            <div className="relative flex items-start gap-6">
-              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
-                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1966
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">A New Seat-in-Exile</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  The 16th Karmapa enthrones Rumtek as his seat-in-exile. Sacred treasures—silk thangkas, statues, the 108-volume Kangyur—are installed, transforming Rumtek into the heartbeat of Tibetan Buddhism outside Tibet.
-                </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Installation of Sacred Treasures" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
-              </div>
-            </div>
-
-            {/* 1981 */}
-            <div className="relative flex items-start gap-6">
-              <div className="flex-shrink-0 grid place-items-center rounded-full bg-white ring-2 ring-saffron text-saffron font-bold shadow-lg z-10 w-14 h-14 md:w-12 md:h-12">
-                <span className="px-1 text-center text-[10px] md:text-[11px] leading-[1.05] tracking-tight break-words">
-                  1981
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-monastery text-lg font-semibold mb-1">Legacy Sealed</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Upon the Karmapa’s passing, his relics are enshrined within a glittering Golden Stupa, sealing Rumtek’s role as both refuge and eternal symbol of resilience.
-                </p>
-                {/* Replaced placeholder with actual Rumtek image */}
-                <img src={rumtekImage} alt="Golden Stupa & Relics" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
+                <img src={rumtekImage} alt="Enchey today" className="mt-3 rounded-lg shadow-md w-full max-w-md" />
               </div>
             </div>
           </div>
@@ -167,24 +131,19 @@ const HistoryPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
         {/* Additional Details Section */}
         <div className="mt-12">
-          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Rumtek Today</h3>
+          <h3 className="font-monastery text-xl font-bold mb-4 text-saffron">Enchey Today</h3>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            Rumtek Monastery stands as a living testament to the resilience of Tibetan Buddhism. Its halls echo with the chants of monks, the debates of scholars, and the footsteps of pilgrims from around the world.
+            A thriving haven of devotion and culture, Enchey’s serene courtyards and hillside views continue to offer a peaceful refuge for meditation, study, and ritual in Gangtok.
           </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            The monastery is not only a spiritual center but also a hub for cultural preservation, hosting vibrant festivals, sacred rituals, and teachings that keep centuries-old traditions alive.
-          </p>
-          <img src={rumtekImage} alt="Rumtek Today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
+          <img src={rumtekImage} alt="Enchey Monastery courtyard today" className="rounded-lg shadow-md w-full max-w-md mb-4" />
           <p className="text-muted-foreground leading-relaxed">
-            Visitors can explore its ornate architecture, meditate in tranquil courtyards, and witness the living heritage of the Karma Kagyu lineage—where every stone, thangka, and prayer wheel tells a story of faith and survival.
+            From its prayer halls to its festivals, Enchey keeps centuries of Buddhist heritage alive—welcoming seekers into a space of quiet strength and living tradition.
           </p>
         </div>
       </div>
     </DialogContent>
   </Dialog>
 );
-
-
 
 const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
@@ -202,8 +161,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">From Gangtok: 24 km (45 minutes)</p>
-              <p className="text-xs text-muted-foreground">Shared taxis and buses available every 30 minutes</p>
+              <p className="text-sm text-muted-foreground mb-2">From Gangtok: ~3 km (10–15 min)</p>
+              <p className="text-xs text-muted-foreground">Frequent shared taxis and local buses from town</p>
             </CardContent>
           </Card>
           <Card>
@@ -214,8 +173,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Private taxi: ₹800-1200</p>
-              <p className="text-xs text-muted-foreground">Well-maintained mountain roads</p>
+              <p className="text-sm text-muted-foreground mb-2">Private taxi: ₹800–₹1200</p>
+              <p className="text-xs text-muted-foreground">Good motorable mountain roads, open year-round</p>
             </CardContent>
           </Card>
           <Card>
@@ -226,8 +185,8 @@ const TravelRoutesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground mb-2">Bagdogra: 125 km (4 hours)</p>
-              <p className="text-xs text-muted-foreground">Helicopter service available</p>
+              <p className="text-sm text-muted-foreground mb-2">Pakyong (~30 km)</p>
+              <p className="text-xs text-muted-foreground">Seasonal helicopter facility Bagdogra ↔ Gangtok</p>
             </CardContent>
           </Card>
         </div>
@@ -255,35 +214,41 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="font-medium text-sm mb-1">Morning Prayers</p>
-                  <p className="text-xs text-muted-foreground">5:30 AM - 7:00 AM</p>
+                  <p className="text-xs text-muted-foreground">6:00 AM - 7:30 AM</p>
                 </div>
                 <div>
                   <p className="font-medium text-sm mb-1">Evening Prayers</p>
-                  <p className="text-xs text-muted-foreground">6:00 PM - 7:30 PM</p>
+                  <p className="text-xs text-muted-foreground">5:30 PM - 7:00 PM</p>
                 </div>
               </div>
             </CardContent>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                <span>Losar Festival</span>
-                <Badge className="bg-primary text-primary-foreground">February 15</Badge>
+                <span>Pang Lhabsol Festival</span>
+                <Badge className="bg-primary text-primary-foreground">Late Sep / Oct</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Tibetan New Year celebration with traditional mask dances and festivities.</p>
+              <p className="text-sm text-muted-foreground">
+                Annual celebration honoring Mount Kanchenjunga, Sikkim’s protector deity—marked by vibrant rituals and community prayers.
+              </p>
             </CardContent>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                <span>Cham Dance</span>
-                <Badge className="bg-secondary text-secondary-foreground">Monthly</Badge>
+                <span>Cham Dance Festival</span>
+                <Badge className="bg-secondary text-secondary-foreground">Annual / Ceremonial</Badge>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">Sacred masked dance performed by monks on the 10th day of every Tibetan month.</p>
+              <p className="text-sm text-muted-foreground">
+                Sacred masked dances during Pang Lhabsol and other ceremonies—believed to cleanse evil energies and bless land and people.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -295,40 +260,34 @@ const RitualsPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const nearbyPlaces = [
     {
-      title: "Tashi View Point",
-      distanceText: "≈ 1 hr 30 min drive (35–40 km) from Rumtek",
-      blurb: "Sunrise hotspot with sweeping views of Kangchenjunga and the Eastern Himalayas.",
-      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/tashi-view-point.html"
-    },
-    {
-      title: "Do Drul Chorten",
-      distanceText: "≈ 45–50 min drive (22–25 km) from Rumtek",
-      blurb: "A striking white stupa encircled by 108 prayer wheels, radiating peace and devotion.",
-      link: "http://sikkimstdc.com/GeneralPages/Details/Do-Drul-Chorten/"
-    },
-    {
-      title: "Enchey Monastery",
-      distanceText: "≈ 1 hr 10 min drive (32–35 km) from Rumtek",
-      blurb: "200-year-old monastery famed for its Cham mask dances and ornate Sikkimese murals.",
-      link: "https://gangtokdistrict.nic.in/tourist-place/enchey-monastery/"
-    },
-    {
       title: "Banjhakri Falls & Energy Park",
-      distanceText: "≈ 45 min drive (20 km) from Rumtek",
-      blurb: "Lush green park with a roaring waterfall, bridges, and shamanic folklore sculptures.",
-      link: "https://www.indianholiday.com/sikkim/tourist-attraction/gangtok/banjhakri-falls-and-energy-park.html"
+      distanceText: "≈ 30 min drive (6 km) from Enchey",
+      blurb: "A green park with a 100-ft waterfall and thematic shamanic sculptures—great for nature and culture lovers.",
+      link: "#"
+    },
+    {
+      title: "Do-Drul Chorten",
+      distanceText: "≈ 10 min drive (3 km) from Enchey",
+      blurb: "One of Sikkim’s largest stupas, ringed by 108 prayer wheels—quiet, contemplative, and close to town.",
+      link: "#"
     },
     {
       title: "Namgyal Institute of Tibetology",
-      distanceText: "≈ 50 min drive (23 km) from Rumtek",
-      blurb: "Premier research hub showcasing rare Tibetan manuscripts, thangkas, and relics.",
-      link: "https://www.tibetology.sikkim.gov.in/"
+      distanceText: "≈ 15 min drive (4 km) from Enchey",
+      blurb: "Premier research center with rare manuscripts, thangkas, and cultural exhibits on Tibetan Buddhism.",
+      link: "#"
+    },
+    {
+      title: "Tashi View Point",
+      distanceText: "≈ 1 hr drive (35 km) from Enchey",
+      blurb: "Famed sunrise vantage with sweeping views of Kanchenjunga and the Eastern Himalaya.",
+      link: "#"
     },
     {
       title: "Hanuman Tok",
-      distanceText: "≈ 1 hr 15 min drive (30 km) from Rumtek",
-      blurb: "Hilltop Hanuman temple maintained by the Indian Army, offering pristine mountain vistas.",
-      link: "https://gangtokdistrict.nic.in/tourist-place/hanuman-tok/"
+      distanceText: "≈ 45 min drive (12 km) from Enchey",
+      blurb: "Hilltop temple overseen by the Indian Army—offers pristine mountain and valley panoramas.",
+      link: "#"
     }
   ];
 
@@ -381,11 +340,10 @@ const FamousPlacesPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   );
 };
 
-
-
 const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const rumtekCoordinates: L.LatLngExpression = [27.3197, 88.5975]; // Latitude, Longitude for Rumtek
-  const rumtekName = "Rumtek Monastery";
+  // Updated to Enchey Monastery (Gangtok)
+  const rumtekCoordinates: L.LatLngExpression = [27.3418, 88.6200];
+  const rumtekName = "Enchey Monastery";
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -393,7 +351,6 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
         <DialogHeader>
           <DialogTitle className="font-monastery text-2xl">Interactive Location Map</DialogTitle>
         </DialogHeader>
-        {/* REPLACED THIS SECTION with LeafletMapComponent */}
         <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
           <LeafletMapComponent
             monasteryPosition={rumtekCoordinates}
@@ -401,12 +358,6 @@ const InteractiveMapPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
             zoom={13}
           />
         </div>
-        {/* The "Get Directions" button can be removed or re-implemented separately
-            if you desire a more advanced directions feature.
-        */}
-        {/* <div className="absolute bottom-4 right-4">
-          <Button size="sm" className="btn-saffron">Get Directions</Button>
-        </div> */}
       </DialogContent>
     </Dialog>
   );
@@ -429,6 +380,7 @@ const VideoPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
     </DialogContent>
   </Dialog>
 );
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -450,12 +402,12 @@ const ModelPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
       </DialogHeader>
       <div className="relative aspect-[4/3] bg-muted rounded-lg overflow-hidden">
         <model-viewer
-  src="/SIH_monestries_images/ency/recy.glb"
-  alt="Rumtek Monastery 3D Model"
-  camera-controls
-  auto-rotate
-  style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
-/>
+          src="/SIH_monestries_images/ency/recy.glb"
+          alt="Rumtek Monastery 3D Model"
+          camera-controls
+          auto-rotate
+          style={{ width: '100%', height: '500px', background: '#f3f4f6', borderRadius: '1rem' }}
+        />
       </div>
     </DialogContent>
   </Dialog>
@@ -466,16 +418,16 @@ export default function RumtekMonastery() {
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
-const images = [
-  "/SIH_monestries_images/ency/ency_1.jpg",
-  "/SIH_monestries_images/ency/ency_2.jpg",
-  "/SIH_monestries_images/ency/ency_3.jpg",
-  "/SIH_monestries_images/ency/ency_4.jpg"
-];
-
+  const images = [
+    "/SIH_monestries_images/ency/ency_1.jpg",
+    "/SIH_monestries_images/ency/ency_2.jpg",
+    "/SIH_monestries_images/ency/ency_3.jpg",
+    "/SIH_monestries_images/ency/ency_4.jpg"
+  ];
 
   const openPopup = (popupName: string) => setActivePopup(popupName);
   const closePopup = () => setActivePopup(null);
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -535,227 +487,204 @@ const images = [
           </div>
         </div>
 
+        {/* Quick Info Cards – unchanged */}
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">24 km from Gangtok</p>
+              <p className="text-sm text-stone-600 mt-1">East Sikkim</p>
+            </CardContent>
+          </Card>
 
- {/* Quick Info Cards – beautified */}
-<div className="grid md:grid-cols-4 gap-6 mb-12">
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-amber-50 to-orange-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-saffron ring-2 ring-saffron/40 group-hover:scale-110 transform transition-transform">
-        <MapPin className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">24 km from Gangtok</p>
-      <p className="text-sm text-stone-600 mt-1">East Sikkim</p>
-    </CardContent>
-  </Card>
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-red-50 to-pink-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
+                <Calendar className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Founded 1966</p>
+              <p className="text-sm text-stone-600 mt-1">16th Karmapa</p>
+            </CardContent>
+          </Card>
 
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-red-50 to-pink-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-rose-500 ring-2 ring-rose-200 group-hover:scale-110 transform transition-transform">
-        <Calendar className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">Founded 1966</p>
-      <p className="text-sm text-stone-600 mt-1">16th Karmapa</p>
-    </CardContent>
-  </Card>
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-emerald-50 to-teal-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
+                <Users className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">300+ Monks</p>
+              <p className="text-sm text-stone-600 mt-1">Karma Kagyu</p>
+            </CardContent>
+          </Card>
 
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-emerald-50 to-teal-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-emerald-600 ring-2 ring-emerald-200 group-hover:scale-110 transform transition-transform">
-        <Users className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">300+ Monks</p>
-      <p className="text-sm text-stone-600 mt-1">Karma Kagyu</p>
-    </CardContent>
-  </Card>
+          <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-indigo-50 to-violet-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
+            <CardContent className="py-8">
+              <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
+                <Star className="w-6 h-6" />
+              </div>
+              <p className="text-base font-bold tracking-tight text-stone-800">Sikkim’s Most Important</p>
+              <p className="text-sm text-stone-600 mt-1">Monastery</p>
+            </CardContent>
+          </Card>
+        </div>
 
-  <Card className="group text-center min-h-[150px] rounded-2xl border-0 bg-gradient-to-br from-indigo-50 to-violet-100 shadow-md hover:shadow-xl transition-all cursor-pointer">
-    <CardContent className="py-8">
-      <div className="mx-auto mb-3 h-12 w-12 grid place-items-center rounded-full bg-white shadow-inner text-violet-600 ring-2 ring-violet-200 group-hover:scale-110 transform transition-transform">
-        <Star className="w-6 h-6" />
-      </div>
-      <p className="text-base font-bold tracking-tight text-stone-800">Sikkim’s Most Important</p>
-      <p className="text-sm text-stone-600 mt-1">Monastery</p>
-    </CardContent>
-  </Card>
+{/* Action Buttons Grid (restored) */}
+<div className="grid md:grid-cols-8 gap-4 mb-8">
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('history')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">📖</div>
+    History
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('travelRoutes')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🚌</div>
+    Travel Routes
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('rituals')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🙏</div>
+    Rituals
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('famousPlaces')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🏔️</div>
+    Nearby Places
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('interactiveMap')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🗺️</div>
+    Interactive Map
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('virtualTour')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">📹</div>
+    360° Tour
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('video')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🎥</div>
+    Video
+  </Button>
+
+  <Button
+    className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
+    onClick={() => openPopup('3dModel')}
+  >
+    <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">🖼️</div>
+    3D Model
+  </Button>
 </div>
 
-
-
-        {/* Action Buttons Grid */}
-        <div className="grid md:grid-cols-8 gap-4 mb-8">
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('history')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              📖
-            </div>
-            History
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('travelRoutes')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🚌
-            </div>
-            Travel Routes
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('rituals')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🙏
-            </div>
-            Rituals
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('famousPlaces')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🏔️
-            </div>
-            Nearby Places
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('interactiveMap')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🗺️
-            </div>
-            Interactive Map
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('virtualTour')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              📹
-            </div>
-            360° Tour
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('video')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🎥
-            </div>
-            Video
-          </Button>
-          <Button 
-            className="h-20 flex-col border border-muted bg-white text-muted-foreground shadow-sm rounded-lg hover:btn-saffron bg-saffron hover:text-white transition-colors"
-            onClick={() => openPopup('3dModel')}
-          >
-            <div className="w-8 h-8 mb-2 bg-muted/10 rounded-full flex items-center justify-center">
-              🖼️
-            </div>
-            3D Model
-          </Button>
-        </div>
-
-      {/* Simplified Audio Box */}
-        <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-        
-        {/* Main Content */}
-        <div className="prose prose-slate max-w-none">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, stands as the largest monastery in Sikkim 
-            and serves as the seat-in-exile of the Karmapa Lama. Built in the 1960s under the direction of the 
-            16th Karmapa, this magnificent monastery houses precious Buddhist artifacts and serves as a major 
-            center for Buddhist learning and meditation.
-          </p>
-          
-          <p className="text-muted-foreground leading-relaxed">
-            The monastery's architecture reflects traditional Tibetan design, featuring intricate woodwork, 
-            vibrant murals, and golden stupas. The main shrine hall contains statues of Buddha and the 16th Karmapa, 
-            along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
-          </p>
-        </div>
-
-        {/* --- BEGIN: Extended Story Section --- */}
-        <div className="flex flex-col gap-12 mt-16">
-          {/* Section 1 */}
+        {/* Main Content (Enchey) */}
+        <div className="flex flex-col gap-12 mt-2 not-prose">
+          {/* Intro */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rumtek Monastery: The Living Heart of Tibet in Sikkim</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                Enchey Monastery: A Divine Jewel in the Heart of Gangtok
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                For the traveler who seeks more than landscapes—for the one who listens for stories in stones and silence—Rumtek Monastery is not just a stop on the map. It is a journey into Tibet’s living heartbeat, carried across borders, revived in exile, and still breathing in the emerald folds of Sikkim’s hills.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Founded in the 16th century and rebuilt by the 16th Karmapa after his flight from Tibet, Rumtek is less a monument than a vessel of resilience. Every carved beam and prayer wheel tells a tale of survival, faith, and the timeless rhythm of devotion.
+                Situated on a peaceful hillside with a view overlooking the lively town of Gangtok, Enchey Monastery is a peaceful retreat immersed in spiritual heritage and vibrant Tibetan Buddhist culture. Established in the early 19th century by Lama Dorjee Phagpa, a devoted follower of the sacred Saint Padmasambhava, the monastery is affiliated with the Nyingma sect—the oldest order of Tibetan Buddhism. Though small in comparison with other monasteries in the Himalayas, Enchey stands highly respected in Sikkimese people and pilgrims who make the trip here in hopes of spiritual comfort and enlightenment.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/ency/ency_1.jpg" alt="Rumtek" />            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/ency/ency_1.jpg"
+                alt="Enchey Monastery hillside view"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
+            </div>
           </div>
 
-          {/* Section 2 */}
+          {/* A Passage Through Time and Spirit */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">An Architectural Mandala</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                A Passage Through Time and Spirit
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Approaching Rumtek feels like stepping into a sacred universe painted in wood and stone. Modeled after the legendary Tsurphu Monastery of Tibet, its three-story structure fuses fortress strength with mandala symmetry.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Vibrant murals splash across walls with scenes of Buddhas, Bodhisattvas, and guardian deities. Carved dragons curl around golden pillars. Sunlight falls across silk thangkas and hand-woven carpets, setting them aglow. In the main hall, a ten-foot Sakyamuni Buddha watches with a serene gravity that seems to slow time.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                As visitors walk a kora—the circular path around the monastery—every spin of the prayer wheel, etched with ancient mantras, whispers blessings into the mountain wind.
+                The early history of the monastery is entwined with stories of God's intervention and the spiritual protection that presided over its existence. It was said that Enchey was constructed to protect Gangtok from evil spirits and bad influences, acting as a spiritual stronghold for the town's population. Over centuries of its history, the monastery has been an integral center of Buddhist practitioners, cultivating meditation, scholarship, and ritual. Its hilltop site not only offers stunning panoramic views of Gangtok and the Himalayan peaks surrounding it but also represents its function as a watchful guardian of the valley below.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/ency/ency_2.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/ency/ency_2.jpg"
+                alt="Enchey Monastery Gangtok landscape"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
+            </div>
           </div>
 
-          {/* Section 3 */}
+          {/* Architectural Harmony and Artistic Splendor */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Golden Heart</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                Architectural Harmony and Artistic Splendor
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                At the center of Rumtek lies its spiritual treasure: the Golden Stupa. Inlaid with jewels and precious metals, it houses the relics of the 16th Karmapa. Surrounding murals depict cosmic landscapes where myth and mountain merge.
+                Enchey Monastery's architecture perfectly reflects traditional Tibetan architecture blended with Sikkimese elements. The monastery is colored brilliant white with rich crimson and gold trim, providing a stark contrast to the vegetation on the hillside. Its wooden windows and elaborately carved pillars feature brilliant motifs of Buddhist gods, guardian spirits, and auspicious symbols. Within the central prayer hall, worshippers are welcomed by lavishly adorned murals that narrate Buddhist texts, with vivid representations of Bodhisattvas, fierce protectors, and realized masters.
               </p>
-              <p className="text-muted-foreground mt-4">
-                Across the courtyard stands the Karma Shri Nalanda Institute for Higher Buddhist Studies—an academic sanctum where monks debate, learn, and keep alive centuries of Buddhist philosophy. To witness them in debate, voices rising and hands clapping in ritual rhythm, is to glimpse an education system older than most nations.
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                The tranquil ambiance is complemented by the monotonous chanting of monks, the smell of smoldering incense, and the soft flutter of prayer flags surrounding the compound. These sensory cues highlight the monastery as a site of meditation and spiritual rejuvenation. The monastery compound also contains a compact but venerated community of monks who have daily prayers and ceremonies, upholding centuries-old practices in an increasingly secularizing world.
               </p>
-              <p className="text-muted-foreground mt-4">
-                And then come the festivals. During Vajrakilaya Drupchen or Losar, the courtyard bursts with color and sound—masked dancers whirl, cymbals clash, and chants rise into the sky, drawing pilgrims, photographers, and seekers alike into an unforgettable celebration.
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Other essential rituals are daily prayer ceremonies, meditation routines, and devotions that keep the spiritual energy of the monastery going all year round. Enchey is not just a house of prayer but also a living cultural hub where Buddhist teachings are passed down to generations.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/ency/ency_3.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/ency/ency_3.jpg"
+                alt="Enchey Monastery interiors and murals"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
+            </div>
           </div>
 
-          {/* Section 4 */}
+          {/* A Quiet Sanctuary Amid Urban Life */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary for Seekers</h2>
+              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                A Quiet Sanctuary Amid Urban Life
+              </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Rumtek is not designed for casual glances—it rewards those who linger. For the historian, it offers archives of rare Buddhist texts. For the spiritual traveler, it provides spaces scented with incense and draped with prayer flags that frame sweeping Himalayan vistas. For the storyteller, it is a canvas where devotion, art, and survival paint their intertwined tale.
+                For those looking for an inner connection more profound than the crowded streets of Gangtok, Enchey Monastery provides a calm oasis where time appears to stand still. Its serene courtyards, which are shaded by centuries-old trees, encourage contemplative thought and introspection. One can observe monks chanting ritually or experience the calm atmosphere oneself by spinning prayer wheels and lighting butter lamps—simple actions indicating devotion and mindfulness.
               </p>
-              <p className="text-muted-foreground mt-4">
-                Sit quietly on the stone steps, and you may hear the steady drone of monks chanting at dawn. Watch prayer flags flutter against snow peaks, and you may feel something shift within—something that belongs not just to the monastery, but to you.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Rumtek is less about visiting and more about returning—with more questions, more stillness, and a deeper reverence for a culture that endures in every stone, song, and shadow.
+              <p className="text-muted-foreground mt-4 leading-relaxed">
+                Its lofty location provides breathtaking scenery of surrounding mountains and the town lying below, incorporating nature with spiritual peace. Enchey is not just a monument to the past; it is a pulsating core of Gangtok's spiritual life, where spiritual tradition and mundane life both exist and progress together in harmony.
               </p>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/ency/ency_4.jpg" alt="Rumtek" className="w-full h-[300px] object-cover rounded-lg shadow-md" />            </div>
+            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+              <img
+                src="/SIH_monestries_images/ency/ency_4.jpg"
+                alt="Enchey Monastery prayer courtyard"
+                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+              />
+            </div>
           </div>
         </div>
-        {/* --- END: Extended Story Section --- */}
+        {/* END Main Content */}
       </div>
 
       {/* Popups */}
