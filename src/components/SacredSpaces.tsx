@@ -170,6 +170,7 @@ export const SacredSpaces = () => {
             : 'grid-cols-1 max-w-4xl mx-auto'
         }`}>
           {filteredMonasteries.map((monastery) => (
+            
             <MonasteryCard
               key={monastery.id}
               name={monastery.name}
