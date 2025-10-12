@@ -3,7 +3,6 @@ import { Search, Filter, Grid, List } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { MonasteryCard } from './MonasteryCard';
-
 import { useNavigate } from 'react-router-dom';
 
 // Sample monastery data - in a real app, this would come from an API
@@ -170,7 +169,6 @@ export const SacredSpaces = () => {
             : 'grid-cols-1 max-w-4xl mx-auto'
         }`}>
           {filteredMonasteries.map((monastery) => (
-            
             <MonasteryCard
               key={monastery.id}
               name={monastery.name}
