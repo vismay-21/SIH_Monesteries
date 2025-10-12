@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -559,13 +560,15 @@ export default function RumtekMonastery() {
        
         {/* Simplified Audio Box */}
         <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/SIH_monestries_images/dubdi/dubdispeech.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+          <ScrollReveal>
+            <audio
+              controls
+              className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+            >
+              <source src="/SIH_monestries_images/dubdi/dubdispeech.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </ScrollReveal>
         </div>
 
 
@@ -616,7 +619,8 @@ export default function RumtekMonastery() {
         <div className="flex flex-col gap-12 mt-2 not-prose">
           {/* Section 1: Intro + Sacred Refuge */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 Dubdi Monastery: Sikkim's Spiritual Dawn Sanctuary of Old
               </h2>
@@ -627,19 +631,23 @@ export default function RumtekMonastery() {
               <p className="text-muted-foreground leading-relaxed">
                 Founded in the early 18th century, Dubdi Monastery was conceived from a divine vision and sanctified with the blessings of the newly enthroned Chogyal of Sikkim, Phuntsog Namgyal. This holy place was designed as a stronghold of religious resilience, envisioned to sustain both the changing political realities and the unshakeable faith of Sikkim's citizens. The monastery is not just a wooden and stone structure—it is a living haven where the prayers resound, and the spiritual lineage whispers softly in all its nooks.
               </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
-              <img
-                src="/SIH_monestries_images/dubdi/dubdi_1.jpg"
-                alt="Dubdi Monastery hillside view"
-                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
-            </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal>
+              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+                <img
+                  src="/SIH_monestries_images/dubdi/dubdi_1.jpg"
+                  alt="Dubdi Monastery hillside view"
+                  className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Section 2: Architectural Serenity */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 Architectural Serenity and Devotional Artistry
               </h2>
@@ -652,38 +660,48 @@ export default function RumtekMonastery() {
               <p className="text-muted-foreground mt-4 leading-relaxed">
                 The altar is home to venerated images of Shakyamuni Buddha, flanked by Guru Padmasambhava, whose wise presence pervades the whole monastery, and Chenrizi, in whom compassion takes physical form. Here, time appears to stand still, shrouded in the incense mist and the monotonous beat of the temple bell.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/dubdi/dubdi_2.jpg"
                 alt="Dubdi Monastery interiors and murals"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
 
           {/* Section 3: Rituals of Time */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 The Rituals of Time
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Dubdi’s essence reveals itself fully during its sacred festivals and daily rites. Pilgrims and monks alike gather for Cham dances—masked performances where myth and reality merge, purifying negativity and invoking blessings. The monastery’s spiritual calendar is detailed and deeply woven into the life of the community, marking the passage of seasons and the rhythm of ancient spiritual practices.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/dubdi/dubdi_3.jpg"
                 alt="Dubdi Monastery rituals"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
 
           {/* Section 4: A Place Beyond Time */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 A Place Beyond Time
               </h2>
@@ -691,16 +709,20 @@ export default function RumtekMonastery() {
                 To go to Dubdi Monastery is to witness a prayer in living stone, wood, and tradition. It is a place of spiritual solace, a cultural jewel, and a silent testament to survival. Here, faith is carved into each stroke and cut into every beam. The monastery invites not only the eyes to behold but the heart to feel—to sense the abiding link between land, faith, and people against the resplendent Himalayan backdrop.
               </p>
               <p className="text-muted-foreground mt-4 leading-relaxed">
-                Sit for a moment on the monastery’s steps, breathe in its serene air, and listen for the chant that transcends centuries. In Dubdi’s silent sanctuary, the ancient soul of Sikkim quietly lives on.
+                Sit for a moment on the monastery's steps, breathe in its serene air, and listen for the chant that transcends centuries. In Dubdi’s silent sanctuary, the ancient soul of Sikkim quietly lives on.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/dubdi/dubdi_4.jpg"
                 alt="Dubdi Monastery prayer courtyard"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
         </div>
         {/* --- END: Main Content --- */}

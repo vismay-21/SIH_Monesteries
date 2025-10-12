@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -647,59 +648,72 @@ export default function RumtekMonastery() {
         </div>
         
         {/* Audio (left as-is) */}
-        <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
-        </div>
+        <ScrollReveal>
+          <div className="mb-6">
+            <audio
+              controls
+              className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+            >
+              <source src="/audio/Rumtek_monastery.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </ScrollReveal>
         
         {/* Main Content – INTRO (exact text provided) */}
         <div className="flex flex-col gap-12 mt-2 not-prose">
           {/* Intro */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 Sangachoeling Monastery: An Everlasting Retreat of Sikkim's Heritage
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 For the visitor looking not only for a place but an experience that is infused with history and faith, Sangachoeling Monastery presents a journey to the essence of Buddhist determination and enigma. Perched deep in the remote hills of South Sikkim, Sangachoeling is one of the region's oldest monasteries—a steadfast vessel filled with the echoes of early masters, monks, and pilgrims across centuries of transition.
               </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
-              <img
-                src="/SIH_monestries_images/sanga/sanga_1.jpg"
-                alt="Sangachoeling Monastery hillside view"
-                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
-            </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal>
+              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+                <img
+                  src="/SIH_monestries_images/sanga/sanga_1.jpg"
+                  alt="Sangachoeling Monastery hillside view"
+                  className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* The Sacred Center of Spiritual Legacy */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 The Sacred Center of Spiritual Legacy
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Established by the venerated Lama Lhatsun Chempo in the 17th century, Sangachoeling was founded as a haven for deep meditation and Buddhist education. It was the spiritual wellspring for the Nyingma tradition in Sikkim, silently fostering generations of practitioners seeking refuge, wisdom, and connection with the divine. The monastery itself is less visited by tourists, so its holy places remain a pristine and reflective environment, which makes every visit feel as if one is stepping back into some timeless world.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/sanga/sanga_2.jpg"
                 alt="Sangachoeling landscape"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
 
           {/* Architectural Poetry in Stone and Timber */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 Architectural Poetry in Stone and Timber
               </h2>
@@ -709,19 +723,25 @@ export default function RumtekMonastery() {
               <p className="text-muted-foreground mt-4 leading-relaxed">
                 The interior walls feature ornate murals of deities, guardians, and enlightened teachers, painted in rich earth tones that have remained unscathed over centuries. Prayer wheels flank the corridors, their constant rotation marked by the gentle hum of monks' mantras that resonate within the holy halls. The central shrine, humble but beautiful, contains statues of Guru Padmasambhava, the Buddha, and local protectors who strengthen the spiritual hold of the monastery.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/sanga/sanga_3.jpg"
                 alt="Sangachoeling interiors and murals"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
 
           {/* The Rhythm of Ritual and Reflection */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 The Rhythm of Ritual and Reflection
               </h2>
@@ -731,7 +751,9 @@ export default function RumtekMonastery() {
               <p className="text-muted-foreground mt-4 leading-relaxed">
                 This sacred rhythm appeals to those drawn to contemplative silence and profound personal connection. The monastery’s relative remoteness offers pilgrims and visitors a rare chance to experience Buddhism’s subtle power, undiluted by crowds or commercialization.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/sanga/sanga_4.jpg"
@@ -739,11 +761,13 @@ export default function RumtekMonastery() {
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
               />
             </div>
+            </ScrollReveal>
           </div>
 
           {/* A Sanctuary for Seekers and Scholars */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
+            <ScrollReveal>
+              <div className="md:w-3/5">
               <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
                 A Sanctuary for Seekers and Scholars
               </h2>
@@ -753,14 +777,18 @@ export default function RumtekMonastery() {
               <p className="text-muted-foreground mt-4 leading-relaxed">
                 Sitting atop sweeping Himalayan scenery, the monastery is an invitation for a solitary pilgrimage—one that defies cartography or travel guides. Here, each turn, each intricately carved beam, each prayer said in hushed tones is a testament to unyielding faith, fortitude, and the transcendent holiness of the mountains.
               </p>
-            </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/sanga/sanga_1.jpg"
                 alt="Sangachoeling seekers and scholars"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
         </div>
         {/* --- END: Intro/Story Section --- */}

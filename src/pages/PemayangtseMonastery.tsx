@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -671,13 +672,15 @@ export default function PemayangtseMonastery() {
 
         {/* Audio Box */}
         <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/SIH_monestries_images/pema/pemaspeech.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+          <ScrollReveal>
+            <audio
+              controls
+              className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+            >
+              <source src="/SIH_monestries_images/pema/pemaspeech.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </ScrollReveal>
         </div>
 
         {/* INTRO: each paragraph with an image */}
@@ -685,16 +688,20 @@ export default function PemayangtseMonastery() {
           {introSections.map((sec, idx) => (
             <div key={sec.title} className="md:flex md:gap-8 items-start">
               <div className="md:w-3/5">
-                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">{sec.title}</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">{sec.text}</p>
+                <ScrollReveal>
+                  <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">{sec.title}</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">{sec.text}</p>
+                </ScrollReveal>
               </div>
-              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-                <img
-                  src={images[idx % images.length]}
-                  alt={sec.title}
-                  className="w-full h-[300px] object-cover rounded-lg shadow-md"
-                />
-              </div>
+              <ScrollReveal>
+                <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+                  <img
+                    src={images[idx % images.length]}
+                    alt={sec.title}
+                    className="w-full h-[300px] object-cover rounded-lg shadow-md"
+                  />
+                </div>
+              </ScrollReveal>
             </div>
           ))}
         </div>

@@ -14,6 +14,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+import ScrollReveal from '@/components/ScrollReveal';
 //kunj is here
 
 // Popup Components
@@ -677,29 +678,36 @@ const images = [
           
         {/* Simplified Audio Box */}
         <div className="mb-6">
+
+          <ScrollReveal>
           <audio
             controls
             className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
+            >
             <source src="/SIH_monestries_images/rumtek/rumtekspeech.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
+            </ScrollReveal>
         </div>
 
         {/* Main Content */}
         <div className="prose prose-slate max-w-none">
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Rumtek Monastery, also known as the Dharma Chakra Centre, stands as the largest monastery in Sikkim 
-            and serves as the seat-in-exile of the Karmapa Lama. Built in the 1960s under the direction of the 
-            16th Karmapa, this magnificent monastery houses precious Buddhist artifacts and serves as a major 
-            center for Buddhist learning and meditation.
-          </p>
+          <ScrollReveal>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Rumtek Monastery, also known as the Dharma Chakra Centre, stands as the largest monastery in Sikkim 
+              and serves as the seat-in-exile of the Karmapa Lama. Built in the 1960s under the direction of the 
+              16th Karmapa, this magnificent monastery houses precious Buddhist artifacts and serves as a major 
+              center for Buddhist learning and meditation.
+            </p>
+          </ScrollReveal>
           
-          <p className="text-muted-foreground leading-relaxed">
-            The monastery's architecture reflects traditional Tibetan design, featuring intricate woodwork, 
-            vibrant murals, and golden stupas. The main shrine hall contains statues of Buddha and the 16th Karmapa, 
-            along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
-          </p>
+          <ScrollReveal>
+            <p className="text-muted-foreground leading-relaxed">
+              The monastery's architecture reflects traditional Tibetan design, featuring intricate woodwork, 
+              vibrant murals, and golden stupas. The main shrine hall contains statues of Buddha and the 16th Karmapa, 
+              along with precious manuscripts and thangkas that represent centuries of Buddhist wisdom and artistry.
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* --- BEGIN: Extended Story Section --- */}
@@ -707,71 +715,91 @@ const images = [
           {/* Section 1 */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rumtek Monastery: The Living Heart of Tibet in Sikkim</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                For the traveler who seeks more than landscapes—for the one who listens for stories in stones and silence—Rumtek Monastery is not just a stop on the map. It is a journey into Tibet’s living heartbeat, carried across borders, revived in exile, and still breathing in the emerald folds of Sikkim’s hills.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Founded in the 16th century and rebuilt by the 16th Karmapa after his flight from Tibet, Rumtek is less a monument than a vessel of resilience. Every carved beam and prayer wheel tells a tale of survival, faith, and the timeless rhythm of devotion.
-              </p>
+              <ScrollReveal>
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Rumtek Monastery: The Living Heart of Tibet in Sikkim</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  For the traveler who seeks more than landscapes—for the one who listens for stories in stones and silence—Rumtek Monastery is not just a stop on the map. It is a journey into Tibet’s living heartbeat, carried across borders, revived in exile, and still breathing in the emerald folds of Sikkim’s hills.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  Founded in the 16th century and rebuilt by the 16th Karmapa after his flight from Tibet, Rumtek is less a monument than a vessel of resilience. Every carved beam and prayer wheel tells a tale of survival, faith, and the timeless rhythm of devotion.
+                </p>
+              </ScrollReveal>
             </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/rumtek/rumtek_1.jpg" alt="Rumtek" />            </div>
+            <ScrollReveal>
+              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+                <img src="/SIH_monestries_images/rumtek/rumtek_1.jpg" alt="Rumtek" />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Section 2 */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">An Architectural Mandala</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Approaching Rumtek feels like stepping into a sacred universe painted in wood and stone. Modeled after the legendary Tsurphu Monastery of Tibet, its three-story structure fuses fortress strength with mandala symmetry.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Vibrant murals splash across walls with scenes of Buddhas, Bodhisattvas, and guardian deities. Carved dragons curl around golden pillars. Sunlight falls across silk thangkas and hand-woven carpets, setting them aglow. In the main hall, a ten-foot Sakyamuni Buddha watches with a serene gravity that seems to slow time.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                As visitors walk a kora—the circular path around the monastery—every spin of the prayer wheel, etched with ancient mantras, whispers blessings into the mountain wind.
-              </p>
+              <ScrollReveal>
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">An Architectural Mandala</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Approaching Rumtek feels like stepping into a sacred universe painted in wood and stone. Modeled after the legendary Tsurphu Monastery of Tibet, its three-story structure fuses fortress strength with mandala symmetry.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  Vibrant murals splash across walls with scenes of Buddhas, Bodhisattvas, and guardian deities. Carved dragons curl around golden pillars. Sunlight falls across silk thangkas and hand-woven carpets, setting them aglow. In the main hall, a ten-foot Sakyamuni Buddha watches with a serene gravity that seems to slow time.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  As visitors walk a kora—the circular path around the monastery—every spin of the prayer wheel, etched with ancient mantras, whispers blessings into the mountain wind.
+                </p>
+              </ScrollReveal>
             </div>
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
               <img src="/SIH_monestries_images/rumtek/rumtek_2.jpg" alt="Rumtek" />
             </div>
+            </ScrollReveal>
           </div>
 
           {/* Section 3 */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Golden Heart</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                At the center of Rumtek lies its spiritual treasure: the Golden Stupa. Inlaid with jewels and precious metals, it houses the relics of the 16th Karmapa. Surrounding murals depict cosmic landscapes where myth and mountain merge.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Across the courtyard stands the Karma Shri Nalanda Institute for Higher Buddhist Studies—an academic sanctum where monks debate, learn, and keep alive centuries of Buddhist philosophy. To witness them in debate, voices rising and hands clapping in ritual rhythm, is to glimpse an education system older than most nations.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                And then come the festivals. During Vajrakilaya Drupchen or Losar, the courtyard bursts with color and sound—masked dancers whirl, cymbals clash, and chants rise into the sky, drawing pilgrims, photographers, and seekers alike into an unforgettable celebration.
-              </p>
+              <ScrollReveal>
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">The Golden Heart</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  At the center of Rumtek lies its spiritual treasure: the Golden Stupa. Inlaid with jewels and precious metals, it houses the relics of the 16th Karmapa. Surrounding murals depict cosmic landscapes where myth and mountain merge.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  Across the courtyard stands the Karma Shri Nalanda Institute for Higher Buddhist Studies—an academic sanctum where monks debate, learn, and keep alive centuries of Buddhist philosophy. To witness them in debate, voices rising and hands clapping in ritual rhythm, is to glimpse an education system older than most nations.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  And then come the festivals. During Vajrakilaya Drupchen or Losar, the courtyard bursts with color and sound—masked dancers whirl, cymbals clash, and chants rise into the sky, drawing pilgrims, photographers, and seekers alike into an unforgettable celebration.
+                </p>
+              </ScrollReveal>
             </div>
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/rumtek/rumtek_3.jpg" alt="Rumtek" />            </div>
+              <img src="/SIH_monestries_images/rumtek/rumtek_3.jpg" alt="Rumtek" />   
+              </div>
+              </ScrollReveal>
           </div>
 
           {/* Section 4 */}
           <div className="md:flex md:gap-8 items-start">
             <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary for Seekers</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Rumtek is not designed for casual glances—it rewards those who linger. For the historian, it offers archives of rare Buddhist texts. For the spiritual traveler, it provides spaces scented with incense and draped with prayer flags that frame sweeping Himalayan vistas. For the storyteller, it is a canvas where devotion, art, and survival paint their intertwined tale.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Sit quietly on the stone steps, and you may hear the steady drone of monks chanting at dawn. Watch prayer flags flutter against snow peaks, and you may feel something shift within—something that belongs not just to the monastery, but to you.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                Rumtek is less about visiting and more about returning—with more questions, more stillness, and a deeper reverence for a culture that endures in every stone, song, and shadow.
-              </p>
+              <ScrollReveal>
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">A Sanctuary for Seekers</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Rumtek is not designed for casual glances—it rewards those who linger. For the historian, it offers archives of rare Buddhist texts. For the spiritual traveler, it provides spaces scented with incense and draped with prayer flags that frame sweeping Himalayan vistas. For the storyteller, it is a canvas where devotion, art, and survival paint their intertwined tale.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  Sit quietly on the stone steps, and you may hear the steady drone of monks chanting at dawn. Watch prayer flags flutter against snow peaks, and you may feel something shift within—something that belongs not just to the monastery, but to you.
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  Rumtek is less about visiting and more about returning—with more questions, more stillness, and a deeper reverence for a culture that endures in every stone, song, and shadow.
+                </p>
+              </ScrollReveal>
             </div>
+            
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-              <img src="/SIH_monestries_images/rumtek/rumtek_4.jpg" alt="Rumtek" />            </div>
+              <img src="/SIH_monestries_images/rumtek/rumtek_4.jpg" alt="Rumtek" />        
+                </div>
+                 </ScrollReveal>
           </div>
         </div>
         {/* --- END: Extended Story Section --- */}

@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -601,100 +602,121 @@ export default function RumtekMonastery() {
 </div>
         {/* Simplified Audio Box */}
         <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/SIH_monestries_images/ency/encyspeech.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+          <ScrollReveal>
+            <audio
+              controls
+              className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+            >
+              <source src="/SIH_monestries_images/ency/encyspeech.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </ScrollReveal>
         </div>
 
         {/* Main Content (Enchey) */}
         <div className="flex flex-col gap-12 mt-2 not-prose">
           {/* Intro */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
-                Enchey Monastery: A Divine Jewel in the Heart of Gangtok
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Situated on a peaceful hillside with a view overlooking the lively town of Gangtok, Enchey Monastery is a peaceful retreat immersed in spiritual heritage and vibrant Tibetan Buddhist culture. Established in the early 19th century by Lama Dorjee Phagpa, a devoted follower of the sacred Saint Padmasambhava, the monastery is affiliated with the Nyingma sect—the oldest order of Tibetan Buddhism. Though small in comparison with other monasteries in the Himalayas, Enchey stands highly respected in Sikkimese people and pilgrims who make the trip here in hopes of spiritual comfort and enlightenment.
-              </p>
-            </div>
-            <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
-              <img
-                src="/SIH_monestries_images/ency/ency_1.jpg"
-                alt="Enchey Monastery hillside view"
-                className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
-            </div>
+            <ScrollReveal>
+              <div className="md:w-3/5">
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                  Enchey Monastery: A Divine Jewel in the Heart of Gangtok
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Situated on a peaceful hillside with a view overlooking the lively town of Gangtok, Enchey Monastery is a peaceful retreat immersed in spiritual heritage and vibrant Tibetan Buddhist culture. Established in the early 19th century by Lama Dorjee Phagpa, a devoted follower of the sacred Saint Padmasambhava, the monastery is affiliated with the Nyingma sect—the oldest order of Tibetan Buddhism. Though small in comparison with other monasteries in the Himalayas, Enchey stands highly respected in Sikkimese people and pilgrims who make the trip here in hopes of spiritual comfort and enlightenment.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal>
+              <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
+                <img
+                  src="/SIH_monestries_images/ency/ency_1.jpg"
+                  alt="Enchey Monastery hillside view"
+                  className="block w-full h-[300px] object-cover rounded-lg shadow-md"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* A Passage Through Time and Spirit */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
-                A Passage Through Time and Spirit
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                The early history of the monastery is entwined with stories of God's intervention and the spiritual protection that presided over its existence. It was said that Enchey was constructed to protect Gangtok from evil spirits and bad influences, acting as a spiritual stronghold for the town's population. Over centuries of its history, the monastery has been an integral center of Buddhist practitioners, cultivating meditation, scholarship, and ritual. Its hilltop site not only offers stunning panoramic views of Gangtok and the Himalayan peaks surrounding it but also represents its function as a watchful guardian of the valley below.
-              </p>
-            </div>
+            <ScrollReveal>
+              <div className="md:w-3/5">
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                  A Passage Through Time and Spirit
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  The early history of the monastery is entwined with stories of God's intervention and the spiritual protection that presided over its existence. It was said that Enchey was constructed to protect Gangtok from evil spirits and bad influences, acting as a spiritual stronghold for the town's population. Over centuries of its history, the monastery has been an integral center of Buddhist practitioners, cultivating meditation, scholarship, and ritual. Its hilltop site not only offers stunning panoramic views of Gangtok and the Himalayan peaks surrounding it but also represents its function as a watchful guardian of the valley below.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/ency/ency_2.jpg"
                 alt="Enchey Monastery Gangtok landscape"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
 
           {/* Architectural Harmony and Artistic Splendor */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
-                Architectural Harmony and Artistic Splendor
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Enchey Monastery's architecture perfectly reflects traditional Tibetan architecture blended with Sikkimese elements. The monastery is colored brilliant white with rich crimson and gold trim, providing a stark contrast to the vegetation on the hillside. Its wooden windows and elaborately carved pillars feature brilliant motifs of Buddhist gods, guardian spirits, and auspicious symbols. Within the central prayer hall, worshippers are welcomed by lavishly adorned murals that narrate Buddhist texts, with vivid representations of Bodhisattvas, fierce protectors, and realized masters.
-              </p>
-              <p className="text-muted-foreground mt-4 leading-relaxed">
-                The tranquil ambiance is complemented by the monotonous chanting of monks, the smell of smoldering incense, and the soft flutter of prayer flags surrounding the compound. These sensory cues highlight the monastery as a site of meditation and spiritual rejuvenation. The monastery compound also contains a compact but venerated community of monks who have daily prayers and ceremonies, upholding centuries-old practices in an increasingly secularizing world.
-              </p>
-              <p className="text-muted-foreground mt-4 leading-relaxed">
-                Other essential rituals are daily prayer ceremonies, meditation routines, and devotions that keep the spiritual energy of the monastery going all year round. Enchey is not just a house of prayer but also a living cultural hub where Buddhist teachings are passed down to generations.
-              </p>
-            </div>
+            <ScrollReveal>
+              <div className="md:w-3/5">
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                  Architectural Harmony and Artistic Splendor
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Enchey Monastery's architecture perfectly reflects traditional Tibetan architecture blended with Sikkimese elements. The monastery is colored brilliant white with rich crimson and gold trim, providing a stark contrast to the vegetation on the hillside. Its wooden windows and elaborately carved pillars feature brilliant motifs of Buddhist gods, guardian spirits, and auspicious symbols. Within the central prayer hall, worshippers are welcomed by lavishly adorned murals that narrate Buddhist texts, with vivid representations of Bodhisattvas, fierce protectors, and realized masters.
+                </p>
+                <p className="text-muted-foreground mt-4 leading-relaxed">
+                  The tranquil ambiance is complemented by the monotonous chanting of monks, the smell of smoldering incense, and the soft flutter of prayer flags surrounding the compound. These sensory cues highlight the monastery as a site of meditation and spiritual rejuvenation. The monastery compound also contains a compact but venerated community of monks who have daily prayers and ceremonies, upholding centuries-old practices in an increasingly secularizing world.
+                </p>
+                <p className="text-muted-foreground mt-4 leading-relaxed">
+                  Other essential rituals are daily prayer ceremonies, meditation routines, and devotions that keep the spiritual energy of the monastery going all year round. Enchey is not just a house of prayer but also a living cultural hub where Buddhist teachings are passed down to generations.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/ency/ency_3.jpg"
                 alt="Enchey Monastery interiors and murals"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
 
           {/* A Quiet Sanctuary Amid Urban Life */}
           <div className="md:flex md:gap-8 items-start">
-            <div className="md:w-3/5">
-              <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
-                A Quiet Sanctuary Amid Urban Life
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                For those looking for an inner connection more profound than the crowded streets of Gangtok, Enchey Monastery provides a calm oasis where time appears to stand still. Its serene courtyards, which are shaded by centuries-old trees, encourage contemplative thought and introspection. One can observe monks chanting ritually or experience the calm atmosphere oneself by spinning prayer wheels and lighting butter lamps—simple actions indicating devotion and mindfulness.
-              </p>
-              <p className="text-muted-foreground mt-4 leading-relaxed">
-                Its lofty location provides breathtaking scenery of surrounding mountains and the town lying below, incorporating nature with spiritual peace. Enchey is not just a monument to the past; it is a pulsating core of Gangtok's spiritual life, where spiritual tradition and mundane life both exist and progress together in harmony.
-              </p>
-            </div>
+            <ScrollReveal>
+              <div className="md:w-3/5">
+                <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+                  A Quiet Sanctuary Amid Urban Life
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  For those looking for an inner connection more profound than the crowded streets of Gangtok, Enchey Monastery provides a calm oasis where time appears to stand still. Its serene courtyards, which are shaded by centuries-old trees, encourage contemplative thought and introspection. One can observe monks chanting ritually or experience the calm atmosphere oneself by spinning prayer wheels and lighting butter lamps—simple actions indicating devotion and mindfulness.
+                </p>
+                <p className="text-muted-foreground mt-4 leading-relaxed">
+                  Its lofty location provides breathtaking scenery of surrounding mountains and the town lying below, incorporating nature with spiritual peace. Enchey is not just a monument to the past; it is a pulsating core of Gangtok's spiritual life, where spiritual tradition and mundane life both exist and progress together in harmony.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
             <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0 self-start not-prose">
               <img
                 src="/SIH_monestries_images/ency/ency_4.jpg"
                 alt="Enchey Monastery prayer courtyard"
                 className="block w-full h-[300px] object-cover rounded-lg shadow-md"
-              />
+                />
             </div>
+                </ScrollReveal>
           </div>
         </div>
         {/* END Main Content */}

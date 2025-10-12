@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useNavigate } from 'react-router-dom';
 import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
+import ScrollReveal from '@/components/ScrollReveal';
 
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
@@ -646,43 +647,50 @@ const images = [
 
       {/* Simplified Audio Box */}
         <div className="mb-6">
-          <audio
-            controls
-            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
-          >
-            <source src="/SIH_monestries_images/tashi/tashispeech.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+          <ScrollReveal>
+            <audio
+              controls
+              className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+            >
+              <source src="/SIH_monestries_images/tashi/tashispeech.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </ScrollReveal>
         </div>
         
         {/* Main Content (REPLACED) */}
 <div className="flex flex-col gap-12 mt-2">
   {/* 1) Intro */}
   <div className="md:flex md:gap-8 items-start">
-    <div className="md:w-3/5">
-      <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
-        Tashiding Monastery: A Divine Shrine of Sikkim
-      </h2>
-      <p className="text-muted-foreground text-lg leading-relaxed">
-        Sited on a hill in West Sikkim, Tashiding Monastery is a symbol of ancient spiritual heritage and
-        cultural resistance. Founded in the 17th century, this monastery is sanctified as one of the holiest
-        places of pilgrimage in the region, said to possess great spiritual power and divine grace. It is named,
-        after all, "The Heart of Sudden Satisfaction" in the local Dzongkha language, due to its importance as a
-        site where believers crave liberation, healing, and spiritual satisfaction.
-      </p>
-    </div>
-    <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
-      <img
-        src="/SIH_monestries_images/tashi/tashi_1.jpg"
-        alt="Tashiding Monastery hilltop"
-        className="w-full h-[300px] object-cover rounded-lg shadow-md"
-      />
-    </div>
+    <ScrollReveal>
+      <div className="md:w-3/5">
+        <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
+          Tashiding Monastery: A Divine Shrine of Sikkim
+        </h2>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Sited on a hill in West Sikkim, Tashiding Monastery is a symbol of ancient spiritual heritage and
+          cultural resistance. Founded in the 17th century, this monastery is sanctified as one of the holiest
+          places of pilgrimage in the region, said to possess great spiritual power and divine grace. It is named,
+          after all, "The Heart of Sudden Satisfaction" in the local Dzongkha language, due to its importance as a
+          site where believers crave liberation, healing, and spiritual satisfaction.
+        </p>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal>
+      <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
+        <img
+          src="/SIH_monestries_images/tashi/tashi_1.jpg"
+          alt="Tashiding Monastery hilltop"
+          className="w-full h-[300px] object-cover rounded-lg shadow-md"
+        />
+      </div>
+    </ScrollReveal>
   </div>
 
   {/* 2) Origins and Historical Significance */}
   <div className="md:flex md:gap-8 items-start">
-    <div className="md:w-3/5">
+    <ScrollReveal>
+      <div className="md:w-3/5">
       <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
         Origins and Historical Significance
       </h2>
@@ -698,7 +706,9 @@ const images = [
         importance is strongly linked to the belief that it safeguards the region from negative energies and helps
         maintain cosmic balance.
       </p>
-    </div>
+      </div>
+    </ScrollReveal>
+      <ScrollReveal>
     <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
       <img
         src="/SIH_monestries_images/tashi/tashi_2.jpg"
@@ -706,11 +716,13 @@ const images = [
         className="w-full h-[300px] object-cover rounded-lg shadow-md"
       />
     </div>
+    </ScrollReveal>
   </div>
 
   {/* 3) Architectural Elegance and Artistic Grandeur */}
   <div className="md:flex md:gap-8 items-start">
-    <div className="md:w-3/5">
+    <ScrollReveal>
+      <div className="md:w-3/5">
       <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">
         Architectural Elegance and Artistic Grandeur
       </h2>
@@ -727,18 +739,23 @@ const images = [
         vanquished by divine armies, and Buddha's teachings, created using bold brushstrokes and brilliant colors
         typical of Tibetan art, cover the walls.
       </p>
-    </div>
+      </div>
+    </ScrollReveal>
+    <ScrollReveal>
+      
     <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
       <img
         src="/SIH_monestries_images/tashi/tashi.jpg"
         alt="Architecture and art at Tashiding"
         className="w-full h-[300px] object-cover rounded-lg shadow-md"
-      />
+        />
     </div>
+        </ScrollReveal>
   </div>
 
   {/* 4) Zangdok Palri */}
   <div className="md:flex md:gap-8 items-start">
+    <ScrollReveal>
     <div className="md:w-3/5">
       <h2 className="font-monastery text-2xl md:text-3xl font-bold mb-4 text-saffron">Zangdok Palri</h2>
       <p className="text-muted-foreground text-lg leading-relaxed">
@@ -748,13 +765,17 @@ const images = [
         worlds.
       </p>
     </div>
+    </ScrollReveal>
+    <ScrollReveal>
+
     <div className="md:w-2/5 mt-6 md:mt-0 flex-shrink-0">
       <img
         src="/SIH_monestries_images/tashi/tashi_4.jpg"
         alt="Zangdok Palri model"
         className="w-full h-[300px] object-cover rounded-lg shadow-md"
-      />
+        />
     </div>
+        </ScrollReveal>
   </div>
 </div>
 {/* END Main Content (REPLACED) */}
