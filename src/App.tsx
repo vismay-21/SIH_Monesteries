@@ -13,6 +13,7 @@ import DubdiMonastery from "./pages/DubdiMonastery.tsx";
 import SangachoelingMonastery from "./pages/SangachoelingMonastery.tsx";
 import Highlights from "./pages/Highlights";
 import JourneyPlanner from "./pages/JourneyPlanner";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+          <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/monastery/rumtek" element={<RumtekMonastery />} />

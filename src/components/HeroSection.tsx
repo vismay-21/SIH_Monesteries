@@ -129,7 +129,7 @@ export const HeroSection = () => {
               <Button
                 variant="ghost"
                 onClick={() => setExploreOpen(true)}
-                className="font-body"
+                className="font-body hover:bg-primary hover:text-primary-foreground"
               >
                 <MapPin className="w-4 h-4 mr-2" />
                 Explore
@@ -138,7 +138,7 @@ export const HeroSection = () => {
               <Button
                 variant="ghost"
                 onClick={() => setCalendarOpen(true)}
-                className="font-body"
+                className="font-body hover:bg-primary hover:text-primary-foreground"
               >
                 <Calendar className="w-4 h-4 mr-2" />
                 Ritual Calendar
@@ -146,7 +146,7 @@ export const HeroSection = () => {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="font-body">
+                  <Button variant="ghost" className="font-body hover:bg-primary hover:text-primary-foreground">
                     <Camera className="w-4 h-4 mr-2" />
                     Virtual Tours
                   </Button>
@@ -160,7 +160,7 @@ export const HeroSection = () => {
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="font-body">
+                  <Button variant="ghost" className="font-body hover:bg-primary hover:text-primary-foreground">
                     <BookOpen className="w-4 h-4 mr-2" />
                     Archives
                   </Button>
@@ -172,10 +172,10 @@ export const HeroSection = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <Button variant="ghost" className="font-body">
-                  <Users className="w-4 h-4 mr-2" />
-                  Plan Visit
-              </Button>
+        <Button variant="ghost" className="font-body hover:bg-primary hover:text-primary-foreground">
+          <Users className="w-4 h-4 mr-2" />
+          Plan Visit
+        </Button>
             </div>
           </div>
         </div>

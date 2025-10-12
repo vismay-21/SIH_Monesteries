@@ -556,6 +556,18 @@ export default function RumtekMonastery() {
   </Button>
 </div>
 
+       
+        {/* Simplified Audio Box */}
+        <div className="mb-6">
+          <audio
+            controls
+            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+          >
+            <source src="/SIH_monestries_images/dubdi/dubdispeech.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
 
         {/* Quick Info Cards – unchanged */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">

@@ -599,6 +599,16 @@ export default function RumtekMonastery() {
     3D Model
   </Button>
 </div>
+        {/* Simplified Audio Box */}
+        <div className="mb-6">
+          <audio
+            controls
+            className="w-[50%] md:w-[25%] rounded-lg shadow-md"
+          >
+            <source src="/SIH_monestries_images/ency/encyspeech.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
 
         {/* Main Content (Enchey) */}
         <div className="flex flex-col gap-12 mt-2 not-prose">

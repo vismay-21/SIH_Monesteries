@@ -5,7 +5,7 @@ import rumtekImage4 from '../assets/seekers_rumtek.jpg';
 import rumtekImage5 from '../assets/living_heart_rumtek.jpg';
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MapPin, Calendar, Users, Star, Bus, Car, Plane } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -470,6 +470,17 @@ export default function RumtekMonastery() {
   const navigate = useNavigate();
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
+
+  // Ensure the page is scrolled to top when this route/component mounts
+  useEffect(() => {
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    } catch (e) {
+      // fallback for older browsers
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }, []);
 
 
 const images = [

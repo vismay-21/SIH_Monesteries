@@ -444,6 +444,8 @@ export default function PemayangtseMonastery() {
   const [activePopup, setActivePopup] = useState<string | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
+
+  
   // Images (unchanged)
   const images = [
     "/SIH_monestries_images/pema/pema_1.jpg",
