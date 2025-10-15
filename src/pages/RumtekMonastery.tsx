@@ -16,7 +16,7 @@ import '@google/model-viewer';
 import { LeafletMapComponent } from '@/components/LeafletMapComponent';
 import ScrollReveal from '@/components/ScrollReveal';
 //kunj is here
-
+// Kunj is the Boss
 // Popup Components
 const VirtualTourPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => (
   <Dialog open={isOpen} onOpenChange={onClose}>
